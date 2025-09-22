@@ -93,7 +93,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
       {isAppLoaded && (
         <>
           {/* About Section */}
-      <section id="about" className="py-20 px-4 bg-slate-900">
+      <section id="about" className="py-20 px-4 glass-section">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -109,28 +109,28 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-slide-in-left">
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 hover:bg-slate-800/70 transition-all duration-300 premium-card">
+                <div className="glass-card rounded-2xl p-6 hover:bg-slate-800/70 transition-all duration-300 premium-card">
                   <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
                     <Code className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-sm font-bold text-white mb-2 text-center tracking-wider">Development</h3>
                 </div>
                 
-                <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 hover:bg-slate-800/70 transition-all duration-300 premium-card">
+                <div className="glass-card rounded-2xl p-6 hover:bg-slate-800/70 transition-all duration-300 premium-card">
                   <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
                     <Brain className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-sm font-bold text-white mb-2 text-center tracking-wider">AI/ML</h3>
                 </div>
                 
-                <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 hover:bg-slate-800/70 transition-all duration-300 premium-card">
+                <div className="glass-card rounded-2xl p-6 hover:bg-slate-800/70 transition-all duration-300 premium-card">
                   <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center">
                     <Lightbulb className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-sm font-bold text-white mb-2 text-center tracking-wider">Innovation</h3>
                 </div>
                 
-                <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 hover:bg-slate-800/70 transition-all duration-300 premium-card">
+                <div className="glass-card rounded-2xl p-6 hover:bg-slate-800/70 transition-all duration-300 premium-card">
                   <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center">
                     <Users className="w-6 h-6 text-white" />
                   </div>
@@ -171,7 +171,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
       </section>
 
       {/* Events Section */}
-      <section id="events" className="py-20 px-4 bg-slate-800/30">
+      <section id="events" className="py-20 px-4 glass-section">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -184,7 +184,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {/* AIEC Orientation */}
-            <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 premium-card">
+            <div className="glass-card rounded-2xl p-6 premium-card">
               <div className="flex items-center justify-between mb-4">
                 <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Orientation</span>
                 <span className="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Closed</span>
@@ -213,7 +213,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
             </div>
 
             {/* AIEC Registration */}
-            <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 premium-card">
+            <div className="glass-card rounded-2xl p-6 premium-card">
               <div className="flex items-center justify-between mb-4">
                 <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Membership</span>
                 <span className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Register Now</span>
@@ -242,7 +242,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
             </div>
 
             {/* Techno Sapiens 2025 */}
-            <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 premium-card">
+            <div className="glass-card rounded-2xl p-6 premium-card">
               <div className="flex items-center justify-between mb-4">
                 <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Tech Fest</span>
                 <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Coming Soon</span>
@@ -283,7 +283,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 bg-slate-900">
+      <section id="projects" className="py-20 px-4 glass-section">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -362,7 +362,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
       </section>
 
       {/* Past Events Section */}
-      <section id="past-events" className="py-20 px-4 bg-slate-800/30">
+      <section id="past-events" className="py-20 px-4 glass-section">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -393,7 +393,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
             </div>
 
             {/* Right Content - Event Card */}
-            <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 premium-card">
+            <div className="glass-card rounded-2xl p-8 premium-card">
               <div className="relative">
                 <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl p-6 mb-6">
                   <div className="text-white">
@@ -426,7 +426,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
       </section>
 
       {/* Society Highlights - Achievements */}
-      <section id="achievements" className="py-20 px-4 bg-slate-900">
+      <section className="py-20 px-4 glass-section">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -439,7 +439,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
 
           {/* Statistics Grid */}
           <div className="grid md:grid-cols-4 gap-8 mb-16">
-            <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 text-center premium-card">
+            <div className="glass-card rounded-2xl p-8 text-center premium-card">
               <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
                 <Calendar className="w-8 h-8 text-white" />
               </div>
@@ -447,7 +447,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
               <div className="text-slate-400 text-sm font-semibold tracking-wider">EVENTS HOSTED</div>
             </div>
 
-            <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 text-center premium-card">
+            <div className="glass-card rounded-2xl p-8 text-center premium-card">
               <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
                 <Code className="w-8 h-8 text-white" />
               </div>
@@ -455,7 +455,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
               <div className="text-slate-400 text-sm font-semibold tracking-wider">PROJECTS COMPLETED</div>
             </div>
 
-            <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 text-center premium-card">
+            <div className="glass-card rounded-2xl p-8 text-center premium-card">
               <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center">
                 <Users className="w-8 h-8 text-white" />
               </div>
@@ -463,7 +463,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
               <div className="text-slate-400 text-sm font-semibold tracking-wider">ACTIVE MEMBERS</div>
             </div>
 
-            <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 text-center premium-card">
+            <div className="glass-card rounded-2xl p-8 text-center premium-card">
               <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center">
                 <Award className="w-8 h-8 text-white" />
               </div>
@@ -477,7 +477,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
             <h3 className="text-3xl font-bold text-white mb-8">Recent Achievements</h3>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 premium-card">
+              <div className="glass-card rounded-2xl p-6 premium-card">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Star className="w-6 h-6 text-white" />
@@ -489,7 +489,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
                 </div>
               </div>
 
-              <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 premium-card">
+              <div className="glass-card rounded-2xl p-6 premium-card">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Lightbulb className="w-6 h-6 text-white" />
@@ -501,7 +501,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
                 </div>
               </div>
 
-              <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 premium-card">
+              <div className="glass-card rounded-2xl p-6 premium-card">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Users className="w-6 h-6 text-white" />
@@ -513,7 +513,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
                 </div>
               </div>
 
-              <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 premium-card">
+              <div className="glass-card rounded-2xl p-6 premium-card">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Award className="w-6 h-6 text-white" />
@@ -525,7 +525,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
                 </div>
               </div>
 
-              <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 premium-card">
+              <div className="glass-card rounded-2xl p-6 premium-card">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Briefcase className="w-6 h-6 text-white" />
@@ -537,7 +537,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
                 </div>
               </div>
 
-              <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 premium-card">
+              <div className="glass-card rounded-2xl p-6 premium-card">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Globe className="w-6 h-6 text-white" />

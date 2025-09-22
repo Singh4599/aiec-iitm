@@ -9,7 +9,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
-import { Lock, Plus, Edit, Trash2, Eye, EyeOff } from "lucide-react";
+// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { 
+  Lock, Plus, Edit, Trash2, Eye, EyeOff, Calendar, Users, Briefcase, 
+  Settings, BarChart3, Database, Zap, Brain, Activity, Globe, Star,
+  Upload, Download, RefreshCw, Search, Filter, Save, X
+} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Admin = () => {
@@ -43,39 +48,53 @@ const Admin = () => {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center px-4">
-        <Card className="ai-card max-w-md w-full">
+      <div className="min-h-screen relative overflow-hidden flex items-center justify-center px-4">
+        {/* 3D Background */}
+        <div className="fixed inset-0 -z-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
+        </div>
+
+        <Card className="glass-card max-w-md w-full transform hover:scale-105 transition-all duration-500 premium-card">
           <CardHeader className="text-center">
-            <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mb-4">
-              <Lock className="w-8 h-8 text-primary" />
+            <div className="w-20 h-20 mx-auto bg-gradient-to-br from-cyan-500/30 to-blue-500/30 rounded-full flex items-center justify-center mb-6 animate-neural-pulse">
+              <Lock className="w-10 h-10 text-cyan-400" />
             </div>
-            <CardTitle className="text-2xl text-primary">Admin Access</CardTitle>
-            <CardDescription>
-              Enter the admin password to access the content management system.
+            <CardTitle className="text-3xl bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent font-black">
+              Admin Access
+            </CardTitle>
+            <CardDescription className="text-slate-300 mt-2">
+              Enter the admin password to access the 3D content management system.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <Label htmlFor="password">Password</Label>
+          <CardContent className="space-y-6">
+            <div className="space-y-2">
+              <Label htmlFor="password" className="text-slate-300 font-medium">Password</Label>
               <Input
                 id="password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
-                className="ai-glow-hover"
+                className="glass-card border-cyan-500/30 focus:border-cyan-400 text-white placeholder-slate-400"
                 placeholder="Enter admin password"
               />
             </div>
             <Button 
               onClick={handleLogin}
-              className="w-full bg-gradient-to-r from-primary to-accent"
+              className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold py-3 rounded-xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105 relative overflow-hidden group"
               disabled={!password}
             >
-              Access Admin Panel
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+              <Zap className="w-5 h-5 mr-2 relative z-10" />
+              <span className="relative z-10">Access Admin Panel</span>
             </Button>
-            <div className="text-center text-sm text-muted-foreground">
-              <p>Demo password: aiec2024admin</p>
+            <div className="text-center">
+              <div className="glass-card rounded-lg p-3 border border-emerald-500/30">
+                <p className="text-emerald-400 text-sm font-mono">Demo: aiec2024admin</p>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -84,24 +103,77 @@ const Admin = () => {
   }
 
   return (
-    <div className="min-h-screen pt-16">
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-8 animate-fade-in-up">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Admin Dashboard
+    <div className="min-h-screen relative overflow-hidden">
+      {/* 3D Animated Background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: '6s'}}></div>
+        
+        {/* Floating particles */}
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-cyan-400/20 rounded-full animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 6}s`,
+                animationDuration: `${4 + Math.random() * 4}s`,
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-8 pt-24 relative z-10">
+        {/* 3D Header */}
+        <div className="mb-12 text-center animate-fade-in-up">
+          <div className="flex justify-center mb-6">
+            <div className="w-24 h-24 bg-gradient-to-br from-cyan-500/30 to-blue-500/30 rounded-full flex items-center justify-center animate-neural-pulse">
+              <Database className="w-12 h-12 text-cyan-400" />
+            </div>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+            3D Admin Dashboard
           </h1>
-          <p className="text-muted-foreground">
-            Manage your website content, events, projects, team members, and job postings.
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+            Advanced content management system with real-time analytics and 3D interface
           </p>
         </div>
 
-        <Tabs defaultValue="events" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-5 ai-card">
-            <TabsTrigger value="events">Events</TabsTrigger>
-            <TabsTrigger value="projects">Projects</TabsTrigger>
-            <TabsTrigger value="team">Team</TabsTrigger>
-            <TabsTrigger value="jobs">Jobs</TabsTrigger>
-            <TabsTrigger value="submissions">Submissions</TabsTrigger>
+        {/* Stats Cards */}
+        <div className="grid md:grid-cols-4 gap-6 mb-12">
+          <StatsCard icon={Calendar} title="Events" count="25" color="from-blue-500 to-cyan-500" />
+          <StatsCard icon={Briefcase} title="Projects" count="18" color="from-purple-500 to-pink-500" />
+          <StatsCard icon={Users} title="Team Members" count="42" color="from-emerald-500 to-teal-500" />
+          <StatsCard icon={BarChart3} title="Analytics" count="1.2K" color="from-orange-500 to-red-500" />
+        </div>
+
+        <Tabs defaultValue="events" className="space-y-8">
+          <TabsList className="glass-card grid w-full grid-cols-5 p-2 rounded-2xl">
+            <TabsTrigger value="events" className="data-[state=active]:bg-cyan-500/20 data-[state=active]:text-cyan-400 text-slate-300 rounded-xl transition-all duration-300">
+              <Calendar className="w-4 h-4 mr-2" />
+              Events
+            </TabsTrigger>
+            <TabsTrigger value="projects" className="data-[state=active]:bg-purple-500/20 data-[state=active]:text-purple-400 text-slate-300 rounded-xl transition-all duration-300">
+              <Briefcase className="w-4 h-4 mr-2" />
+              Projects
+            </TabsTrigger>
+            <TabsTrigger value="team" className="data-[state=active]:bg-emerald-500/20 data-[state=active]:text-emerald-400 text-slate-300 rounded-xl transition-all duration-300">
+              <Users className="w-4 h-4 mr-2" />
+              Team
+            </TabsTrigger>
+            <TabsTrigger value="analytics" className="data-[state=active]:bg-orange-500/20 data-[state=active]:text-orange-400 text-slate-300 rounded-xl transition-all duration-300">
+              <BarChart3 className="w-4 h-4 mr-2" />
+              Analytics
+            </TabsTrigger>
+            <TabsTrigger value="settings" className="data-[state=active]:bg-pink-500/20 data-[state=active]:text-pink-400 text-slate-300 rounded-xl transition-all duration-300">
+              <Settings className="w-4 h-4 mr-2" />
+              Settings
+            </TabsTrigger>
           </TabsList>
 
           {/* Events Management */}
@@ -119,14 +191,14 @@ const Admin = () => {
             <TeamManagement />
           </TabsContent>
 
-          {/* Jobs Management */}
-          <TabsContent value="jobs">
-            <JobsManagement />
+          {/* Analytics */}
+          <TabsContent value="analytics">
+            <AnalyticsDashboard />
           </TabsContent>
 
-          {/* Submissions View */}
-          <TabsContent value="submissions">
-            <SubmissionsView />
+          {/* Settings */}
+          <TabsContent value="settings">
+            <SettingsPanel />
           </TabsContent>
         </Tabs>
       </div>
@@ -134,10 +206,30 @@ const Admin = () => {
   );
 };
 
-// Component for managing events
+// 3D Stats Card Component
+const StatsCard = ({ icon: Icon, title, count, color }) => (
+  <Card className="glass-card premium-card transform hover:scale-105 transition-all duration-500 hover:rotate-1">
+    <CardContent className="p-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-slate-400 text-sm font-medium">{title}</p>
+          <p className="text-3xl font-black text-white mt-1">{count}</p>
+        </div>
+        <div className={`w-16 h-16 bg-gradient-to-br ${color} rounded-2xl flex items-center justify-center animate-neural-pulse`}>
+          <Icon className="w-8 h-8 text-white" />
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+);
+
+// Enhanced 3D Events Management Component
 const EventsManagement = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filterStatus, setFilterStatus] = useState("all");
+  const [editingEvent, setEditingEvent] = useState(null);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -189,59 +281,129 @@ const EventsManagement = () => {
     }
   };
 
+  const filteredEvents = events.filter(event => {
+    const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         event.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesFilter = filterStatus === "all" || 
+                         (filterStatus === "featured" && event.is_featured) ||
+                         (filterStatus === "upcoming" && new Date(event.date) > new Date());
+    return matchesSearch && matchesFilter;
+  });
+
   if (loading) {
     return (
-      <div className="text-center py-12">
-        <div className="inline-block w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
-        <p className="mt-4 text-muted-foreground">Loading events...</p>
+      <div className="text-center py-20">
+        <div className="w-16 h-16 mx-auto bg-gradient-to-br from-cyan-500/30 to-blue-500/30 rounded-full flex items-center justify-center mb-6 animate-neural-pulse">
+          <RefreshCw className="w-8 h-8 text-cyan-400 animate-spin" />
+        </div>
+        <p className="text-xl text-slate-300">Loading events...</p>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-primary">Manage Events</h2>
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button className="bg-gradient-to-r from-primary to-accent">
-              <Plus className="w-4 h-4 mr-2" />
-              Add Event
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="ai-card max-w-2xl">
-            <DialogHeader>
-              <DialogTitle className="text-primary">Add New Event</DialogTitle>
-            </DialogHeader>
-            <EventForm onSuccess={loadEvents} />
-          </DialogContent>
-        </Dialog>
+    <div className="space-y-8">
+      {/* 3D Header */}
+      <div className="glass-card rounded-2xl p-8">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          <div>
+            <h2 className="text-3xl font-black bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-2">
+              Events Management
+            </h2>
+            <p className="text-slate-400">Create, edit, and manage all your events</p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4">
+            {/* Search */}
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" />
+              <Input
+                placeholder="Search events..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="glass-card pl-10 border-cyan-500/30 focus:border-cyan-400 text-white"
+              />
+            </div>
+            
+            {/* Filter */}
+            <div className="relative">
+              <select
+                value={filterStatus}
+                onChange={(e) => setFilterStatus(e.target.value)}
+                className="glass-card border-cyan-500/30 text-white w-40 px-3 py-2 rounded-lg appearance-none bg-slate-800/50 focus:border-cyan-400 focus:outline-none"
+              >
+                <option value="all">All Events</option>
+                <option value="featured">Featured</option>
+                <option value="upcoming">Upcoming</option>
+              </select>
+              <Filter className="absolute right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+            </div>
+            
+            {/* Add Event Button */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold rounded-xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105">
+                  <Plus className="w-4 h-4 mr-2" />
+                  Add Event
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="glass-card max-w-3xl border-cyan-500/30">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                    Add New Event
+                  </DialogTitle>
+                </DialogHeader>
+                <EventForm onSuccess={loadEvents} />
+              </DialogContent>
+            </Dialog>
+          </div>
+        </div>
       </div>
 
+      {/* Events Grid */}
       <div className="grid gap-6">
-        {events.length > 0 ? (
-          events.map((event) => (
-            <Card key={event.id} className="ai-card">
+        {filteredEvents.length > 0 ? (
+          filteredEvents.map((event, index) => (
+            <Card key={event.id} className="glass-card premium-card transform hover:scale-[1.02] transition-all duration-500" style={{animationDelay: `${index * 0.1}s`}}>
               <CardHeader>
                 <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle className="text-primary flex items-center gap-2">
-                      {event.title}
-                      {event.is_featured && (
-                        <Badge variant="default">Featured</Badge>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse"></div>
+                      <CardTitle className="text-xl text-white flex items-center gap-3">
+                        {event.title}
+                        {event.is_featured && (
+                          <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white">
+                            <Star className="w-3 h-3 mr-1" />
+                            Featured
+                          </Badge>
+                        )}
+                      </CardTitle>
+                    </div>
+                    <CardDescription className="text-slate-400 flex items-center gap-4">
+                      <span className="flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        {new Date(event.date).toLocaleDateString()}
+                      </span>
+                      {event.location && (
+                        <span className="flex items-center gap-1">
+                          <Globe className="w-4 h-4" />
+                          {event.location}
+                        </span>
                       )}
-                    </CardTitle>
-                    <CardDescription>
-                      {new Date(event.date).toLocaleDateString()} • {event.location}
                     </CardDescription>
                   </div>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="outline">
+                    <Button 
+                      size="sm" 
+                      className="glass-button hover:bg-blue-500/20"
+                      onClick={() => setEditingEvent(event)}
+                    >
                       <Edit className="w-4 h-4" />
                     </Button>
                     <Button 
                       size="sm" 
-                      variant="destructive"
+                      className="glass-button hover:bg-red-500/20 text-red-400"
                       onClick={() => deleteEvent(event.id)}
                     >
                       <Trash2 className="w-4 h-4" />
@@ -250,17 +412,69 @@ const EventsManagement = () => {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">{event.description}</p>
+                <p className="text-slate-300 leading-relaxed">{event.description}</p>
+                {event.image_url && (
+                  <div className="mt-4">
+                    <img 
+                      src={event.image_url} 
+                      alt={event.title}
+                      className="w-full h-48 object-cover rounded-xl"
+                    />
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))
         ) : (
-          <Card className="ai-card text-center p-12">
-            <h3 className="text-xl font-semibold mb-2">No Events</h3>
-            <p className="text-muted-foreground">Start by adding your first event.</p>
+          <Card className="glass-card text-center p-20">
+            <div className="w-20 h-20 mx-auto bg-gradient-to-br from-slate-600/30 to-slate-700/30 rounded-full flex items-center justify-center mb-6">
+              <Calendar className="w-10 h-10 text-slate-400" />
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-2">No Events Found</h3>
+            <p className="text-slate-400 mb-6">
+              {searchTerm || filterStatus !== "all" 
+                ? "Try adjusting your search or filter criteria" 
+                : "Start by adding your first event"}
+            </p>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500">
+                  <Plus className="w-4 h-4 mr-2" />
+                  Add Your First Event
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="glass-card max-w-3xl border-cyan-500/30">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                    Add New Event
+                  </DialogTitle>
+                </DialogHeader>
+                <EventForm onSuccess={loadEvents} />
+              </DialogContent>
+            </Dialog>
           </Card>
         )}
       </div>
+
+      {/* Edit Event Dialog */}
+      {editingEvent && (
+        <Dialog open={!!editingEvent} onOpenChange={() => setEditingEvent(null)}>
+          <DialogContent className="glass-card max-w-3xl border-cyan-500/30">
+            <DialogHeader>
+              <DialogTitle className="text-2xl bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Edit Event
+              </DialogTitle>
+            </DialogHeader>
+            <EventForm 
+              event={editingEvent} 
+              onSuccess={() => {
+                loadEvents();
+                setEditingEvent(null);
+              }} 
+            />
+          </DialogContent>
+        </Dialog>
+      )}
     </div>
   );
 };

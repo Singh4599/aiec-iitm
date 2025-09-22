@@ -51,6 +51,140 @@
   50% { background-position: 100% 50%; }
 }
 
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+@keyframes data-flow {
+  0% { transform: translateX(-100%) scaleX(0); }
+  50% { transform: translateX(0%) scaleX(1); }
+  100% { transform: translateX(100%) scaleX(0); }
+}
+
+@keyframes neural-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(34, 211, 238, 0.3),
+                0 0 10px rgba(34, 211, 238, 0.2),
+                0 0 15px rgba(34, 211, 238, 0.1);
+  }
+  50% { 
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.6),
+                0 0 20px rgba(34, 211, 238, 0.4),
+                0 0 30px rgba(34, 211, 238, 0.2);
+  }
+}
+
+/* Advanced 3D Cyberpunk Animations */
+@keyframes hologram-flicker {
+  0%, 100% { opacity: 1; transform: translateZ(0) rotateY(0deg); }
+  25% { opacity: 0.8; transform: translateZ(10px) rotateY(2deg); }
+  50% { opacity: 0.9; transform: translateZ(-5px) rotateY(-1deg); }
+  75% { opacity: 0.85; transform: translateZ(15px) rotateY(3deg); }
+}
+
+@keyframes matrix-rain {
+  0% { transform: translateY(-100vh) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh) translateX(20px); opacity: 0; }
+}
+
+@keyframes cyber-grid {
+  0% { transform: perspective(1000px) rotateX(60deg) translateZ(0); }
+  100% { transform: perspective(1000px) rotateX(60deg) translateZ(-200px); }
+}
+
+@keyframes neon-pulse {
+  0%, 100% { 
+    text-shadow: 0 0 5px currentColor,
+                 0 0 10px currentColor,
+                 0 0 15px currentColor,
+                 0 0 20px currentColor;
+  }
+  50% { 
+    text-shadow: 0 0 2px currentColor,
+                 0 0 5px currentColor,
+                 0 0 8px currentColor,
+                 0 0 12px currentColor;
+  }
+}
+
+@keyframes holographic-scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes floating-panel {
+  0%, 100% { 
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+  }
+  33% { 
+    transform: translateY(-10px) rotateX(5deg) rotateY(2deg);
+    box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+  }
+  66% { 
+    transform: translateY(5px) rotateX(-3deg) rotateY(-1deg);
+    box-shadow: 0 15px 35px rgba(0, 255, 255, 0.15);
+  }
+}
+
+@keyframes particle-drift {
+  0% { 
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { 
+    transform: translate3d(var(--random-x, 100px), var(--random-y, -100px), var(--random-z, 50px)) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes cyber-circuit {
+  0% { 
+    stroke-dashoffset: 1000;
+    opacity: 0;
+  }
+  50% { 
+    opacity: 1;
+  }
+  100% { 
+    stroke-dashoffset: 0;
+    opacity: 0.7;
+  }
+}
+
+@keyframes hologram-distort {
+  0%, 100% { 
+    transform: scaleY(1) skewX(0deg);
+    filter: hue-rotate(0deg);
+  }
+  25% { 
+    transform: scaleY(0.98) skewX(0.5deg);
+    filter: hue-rotate(90deg);
+  }
+  50% { 
+    transform: scaleY(1.02) skewX(-0.3deg);
+    filter: hue-rotate(180deg);
+  }
+  75% { 
+    transform: scaleY(0.99) skewX(0.2deg);
+    filter: hue-rotate(270deg);
+  }
+}
+
 /* Custom Utility Classes */
 .animate-float {
   animation: float 6s ease-in-out infinite;
@@ -77,11 +211,102 @@
   animation: gradient-shift 3s ease infinite;
 }
 
-/* Glass morphism effect */
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-glitch {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+.animate-neural-pulse {
+  animation: neural-pulse 2s ease-in-out infinite;
+}
+
+.animate-data-flow {
+  animation: data-flow 2s ease-in-out infinite;
+}
+
+/* Advanced 3D Cyberpunk Classes */
+.animate-hologram-flicker {
+  animation: hologram-flicker 3s ease-in-out infinite;
+}
+
+.animate-matrix-rain {
+  animation: matrix-rain 4s linear infinite;
+}
+
+.animate-cyber-grid {
+  animation: cyber-grid 20s linear infinite;
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+.animate-holographic-scan {
+  animation: holographic-scan 3s ease-in-out infinite;
+}
+
+.animate-floating-panel {
+  animation: floating-panel 8s ease-in-out infinite;
+}
+
+.animate-particle-drift {
+  animation: particle-drift 6s ease-out infinite;
+}
+
+.animate-cyber-circuit {
+  animation: cyber-circuit 4s ease-in-out infinite;
+}
+
+.animate-hologram-distort {
+  animation: hologram-distort 5s ease-in-out infinite;
+}
+
+/* Enhanced Glass morphism effects */
 .glass {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-navbar {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+.glass-hero {
+  background: rgba(15, 23, 42, 0.2);
+  backdrop-filter: blur(40px);
+}
+
+.glass-section {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(148, 163, 184, 0.05);
+}
+
+.glass-button {
+  background: rgba(34, 211, 238, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: rgba(34, 211, 238, 0.2);
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  box-shadow: 0 8px 32px rgba(34, 211, 238, 0.2);
 }
 
 /* Premium card hover effects */

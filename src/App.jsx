@@ -1,10 +1,12 @@
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Sonner } from "@/components/ui/sonner";
+import TestComponent from "./TestComponent";
 import Navbar from "./components/Navbar";
+import CyberpunkBackground from "./components/CyberpunkBackground";
 import Home from "./pages/Home";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
@@ -51,7 +53,10 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <div className="min-h-screen bg-slate-900">
+          <div className="min-h-screen relative overflow-hidden">
+            {/* Advanced 3D Cyberpunk Background */}
+            <CyberpunkBackground />
+            <TestComponent />
             {isAppLoaded && <Navbar />}
             <Routes>
               <Route path="/" element={<Home isAppLoaded={isAppLoaded} showLoadingScreen={showLoadingScreen} />} />

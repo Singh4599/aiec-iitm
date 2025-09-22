@@ -200,7 +200,7 @@ const Team = () => {
     }
   ];
 
-  const renderDepartment = (title, members, bgColor = "bg-slate-800/30") => (
+  const renderDepartment = (title, members, bgColor = "glass-section") => (
     <section className={`py-20 px-4 ${bgColor}`}>
       <div className="container mx-auto">
         <div className="text-center mb-16">
@@ -211,7 +211,7 @@ const Team = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {members.map((member, index) => (
-            <Card key={index} className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl premium-card">
+            <Card key={index} className="glass-card rounded-2xl premium-card">
               <CardHeader className="text-center pb-4">
                 <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-500 p-1">
                   <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
@@ -249,7 +249,13 @@ const Team = () => {
   );
 
   return (
-    <div className="min-h-screen pt-16 bg-slate-900">
+    <div className="min-h-screen pt-16 relative">
+      {/* Glassmorphic Background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+        <div className="absolute top-1/3 left-1/3 w-72 h-72 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-gradient-to-r from-cyan-500/10 to-emerald-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
+      </div>
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
@@ -265,25 +271,25 @@ const Team = () => {
       </section>
 
       {/* Faculty Heads */}
-      {renderDepartment("Faculty Heads", facultyHeads, "bg-slate-800/30")}
+      {renderDepartment("Faculty Heads", facultyHeads, "glass-section")}
 
       {/* Leadership */}
-      {renderDepartment("Leadership", leadership, "bg-slate-900")}
+      {renderDepartment("Leadership", leadership, "glass-section")}
 
       {/* Technical Department */}
-      {renderDepartment("Technical Department", technicalDepartment, "bg-slate-800/30")}
+      {renderDepartment("Technical Department", technicalDepartment, "glass-section")}
 
       {/* Graphics Department */}
-      {renderDepartment("Graphics Department", graphicsDepartment, "bg-slate-900")}
+      {renderDepartment("Graphics Department", graphicsDepartment, "glass-section")}
 
       {/* Content & Editorial Department */}
-      {renderDepartment("Content & Editorial Department", contentEditorialDepartment, "bg-slate-800/30")}
+      {renderDepartment("Content & Editorial Department", contentEditorialDepartment, "glass-section")}
 
       {/* Event Management & Marketing Department */}
-      {renderDepartment("Event Management & Marketing Department", eventManagementDepartment, "bg-slate-900")}
+      {renderDepartment("Event Management & Marketing Department", eventManagementDepartment, "glass-section")}
 
       {/* PR Department */}
-      <section className="py-20 px-4 bg-slate-800/30">
+      <section className="py-20 px-4 glass-section">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-black mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -293,7 +299,7 @@ const Team = () => {
 
           <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
             {prDepartment.map((member, index) => (
-              <Card key={index} className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl premium-card">
+              <Card key={index} className="glass-card rounded-2xl premium-card">
                 <CardHeader className="text-center pb-4">
                   <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-500 p-1">
                     <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
@@ -330,13 +336,13 @@ const Team = () => {
       </section>
 
       {/* Advertising Department */}
-      {renderDepartment("Advertising Department", advertisingDepartment, "bg-slate-900")}
+      {renderDepartment("Advertising Department", advertisingDepartment, "glass-section")}
 
       {/* Video Editing & Photography Department */}
-      {renderDepartment("Video Editing & Photography Department", videoEditingDepartment, "bg-slate-800/30")}
+      {renderDepartment("Video Editing & Photography Department", videoEditingDepartment, "glass-section")}
 
       {/* Social Media Department */}
-      {renderDepartment("Social Media Department", socialMediaDepartment, "bg-slate-900")}
+      {renderDepartment("Social Media Department", socialMediaDepartment, "glass-section")}
     </div>
   );
 };
