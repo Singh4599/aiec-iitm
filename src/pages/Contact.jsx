@@ -111,15 +111,15 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 cyber-bg">
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Contact Us
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 cyber-primary font-mono">
+              CONTACT US
             </h1>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl cyber-text-muted max-w-4xl mx-auto leading-relaxed font-mono">
               Have questions about our research, looking for collaboration opportunities, 
               or want to learn more about AIEC IITM? We'd love to hear from you.
             </p>

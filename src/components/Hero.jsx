@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ChevronDown, Zap, Brain, Cpu, Code, Database, Network, Sparkles, Bot, Activity, Wifi, Power } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Galaxy from "./Galaxy";
 
 const Hero = ({ id, showLoadingScreen }) => {
   const [loadingProgress, setLoadingProgress] = useState(0);
@@ -19,6 +20,23 @@ const Hero = ({ id, showLoadingScreen }) => {
       setLoadingProgress(0);
       setIsLoaded(false);
       setShowContent(false);
+      
+      // Faster loading simulation
+      const loadingInterval = setInterval(() => {
+        setLoadingProgress(prev => {
+          if (prev >= 100) {
+            clearInterval(loadingInterval);
+            setTimeout(() => {
+              setIsLoaded(true);
+              setTimeout(() => setShowContent(true), 200);
+            }, 300);
+            return 100;
+          }
+          return prev + Math.random() * 25 + 15;
+        });
+      }, 60);
+
+      return () => clearInterval(loadingInterval);
     } else {
       // Skip loading animation
       setLoadingProgress(100);
@@ -115,29 +133,60 @@ const Hero = ({ id, showLoadingScreen }) => {
   }));
 
   return (
-    <section id={id} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Subtle overlay for content readability */}
-      <div className="absolute inset-0 bg-slate-900/20" />
+    <section id={id} className="relative min-h-screen flex items-center justify-center overflow-hidden cyber-bg">
+      {/* Galaxy Background */}
+      <div className="absolute inset-0 z-0">
+        <Galaxy 
+          mouseRepulsion={true}
+          mouseInteraction={true}
+          density={0.8}
+          glowIntensity={0.4}
+          saturation={0.3}
+          hueShift={240}
+          speed={0.8}
+          twinkleIntensity={0.2}
+          rotationSpeed={0.05}
+          transparent={true}
+        />
+        {/* Cyberpunk gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-cyan-900/10 to-black"></div>
+        {/* Scan line effect */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent h-1 animate-scan-line"></div>
+      </div>
 
       <div className="container mx-auto px-4 text-center relative z-10">
         {!showContent ? (
-          /* Premium Loading Screen */
+          /* 3D Dynamic Loading Screen */
           <div className="space-y-12 animate-fade-in">
-            {/* Logo and Title */}
-            <div className="space-y-6">
+            {/* 3D Logo and Title */}
+            <div className="space-y-8">
               <div className="relative">
-                <div className="w-32 h-32 mx-auto bg-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-cyan-500/50 animate-neural-pulse animate-hologram-flicker">
-                  <Brain className="w-16 h-16 text-white animate-neon-pulse" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/30 to-purple-500/30 rounded-3xl animate-ping"></div>
-                  <div className="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-3xl blur-lg animate-pulse"></div>
+                {/* 3D Rotating Cube */}
+                <div className="w-40 h-40 mx-auto relative perspective-1000">
+                  <div className="absolute inset-0 transform-gpu animate-spin-slow" style={{ transformStyle: 'preserve-3d' }}>
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 rounded-2xl shadow-2xl shadow-cyan-500/50 animate-neural-pulse" style={{ transform: 'rotateY(0deg) translateZ(20px)' }}>
+                      <Brain className="w-20 h-20 text-white animate-neon-pulse mx-auto mt-8" />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-cyan-500 rounded-2xl shadow-2xl shadow-purple-500/50 animate-neural-pulse" style={{ transform: 'rotateY(90deg) translateZ(20px)' }}>
+                      <Cpu className="w-20 h-20 text-white animate-neon-pulse mx-auto mt-8" />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-cyan-500 to-purple-500 rounded-2xl shadow-2xl shadow-blue-500/50 animate-neural-pulse" style={{ transform: 'rotateY(180deg) translateZ(20px)' }}>
+                      <Bot className="w-20 h-20 text-white animate-neon-pulse mx-auto mt-8" />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-2xl shadow-2xl shadow-pink-500/50 animate-neural-pulse" style={{ transform: 'rotateY(270deg) translateZ(20px)' }}>
+                      <Database className="w-20 h-20 text-white animate-neon-pulse mx-auto mt-8" />
+                    </div>
+                  </div>
+                  {/* 3D Glow Effect */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400/30 via-purple-400/30 to-pink-400/30 rounded-3xl blur-2xl animate-pulse"></div>
                 </div>
               </div>
               
-              <div className="space-y-3">
-                <h1 className="text-5xl md:text-7xl font-black bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent tracking-tight animate-neon-pulse">
+              <div className="space-y-4">
+                <h1 className="text-6xl md:text-8xl font-black bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent tracking-tight animate-neon-pulse">
                   AIEC IITM
                 </h1>
-                <p className="text-xl md:text-2xl text-cyan-300 font-medium tracking-wide animate-hologram-flicker">
+                <p className="text-2xl md:text-3xl text-cyan-300 font-medium tracking-wide animate-hologram-flicker">
                   AI Experience Centre
                 </p>
               </div>
@@ -222,161 +271,92 @@ const Hero = ({ id, showLoadingScreen }) => {
             </div>
           </div>
         ) : (
-          /* Dynamic AI Interface */
+          /* Dark Theme Hero Interface */
           <div className="grid lg:grid-cols-2 gap-16 items-center animate-fade-in-up max-w-7xl mx-auto">
-            {/* Left Content - AI Interface */}
+            {/* Left Content - Dark Theme Design */}
             <div className="space-y-8 text-left lg:text-left order-2 lg:order-1">
-              {/* Cyberpunk AI Status Header */}
-              <div className="flex items-center space-x-4 mb-8">
-                <div className="relative">
-                  <div className={`w-5 h-5 rounded-full ${robotPulse ? 'bg-emerald-400' : 'bg-cyan-400'} transition-colors duration-500 animate-neural-pulse shadow-lg ${robotPulse ? 'shadow-emerald-400/50' : 'shadow-cyan-400/50'}`}>
-                    <div className={`absolute inset-0 rounded-full ${robotPulse ? 'bg-emerald-400' : 'bg-cyan-400'} animate-ping opacity-75`}></div>
-                  </div>
-                </div>
-                <span className="text-sm font-mono text-cyan-300 tracking-wider animate-hologram-flicker">
-                  NEURAL STATUS: <span className={`${robotPulse ? 'text-emerald-400' : 'text-cyan-400'} animate-neon-pulse`}>{aiStatus}</span>
-                </span>
+              {/* Cyberpunk Status Chip */}
+              <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium cyber-card cyber-glow">
+                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-cyan-500 to-green-500 text-black mr-3 font-bold">01</span>
+                <span className="cyber-primary font-mono">PURPOSE</span>
               </div>
               
               {/* Cyberpunk Main Title */}
-              <div className="space-y-8">
-                <h1 className="text-6xl md:text-8xl lg:text-7xl xl:text-8xl font-black bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent tracking-tight leading-none relative animate-neon-pulse">
-                  AIEC IITM
-                  <div className="absolute inset-0 text-6xl md:text-8xl lg:text-7xl xl:text-8xl font-black text-cyan-400/10 animate-hologram-distort">
-                    AIEC IITM
-                  </div>
-                  <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 blur-2xl -z-10 animate-pulse"></div>
+              <div className="space-y-6">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black cyber-text tracking-tight leading-tight">
+                  <span className="cyber-primary">AIEC IITM</span>: Where Code<br className="hidden sm:inline" />Meets Innovation
                 </h1>
                 
-                {/* Animated Subtitle with Hologram Effect */}
-                <div className="h-16 flex items-center justify-center">
-                  <div className="relative">
-                    <p className="text-2xl md:text-3xl lg:text-2xl xl:text-3xl text-cyan-300 font-light animate-hologram-flicker">
-                      {typedText}
-                      <span className="animate-pulse text-cyan-400 text-3xl">|</span>
-                    </p>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent animate-holographic-scan"></div>
-                  </div>
-                </div>
+                {/* Cyberpunk Subtitle */}
+                <p className="text-xl md:text-2xl cyber-secondary leading-relaxed max-w-2xl font-mono">
+                  The Artificial Intelligence Experience Centre that bridges human creativity with artificial intelligence to shape future-ready innovators.
+                </p>
               </div>
               
-              {/* Cyberpunk AI Description */}
+              {/* Cyberpunk Description */}
               <div className="space-y-6">
-                <div className="relative">
-                  <p className="text-base md:text-lg text-slate-300 leading-relaxed max-w-lg animate-hologram-flicker">
-                    From coding to creativity, we bridge human intelligence with artificial intelligence to shape 
-                    <span className="text-cyan-400 font-medium animate-neon-pulse"> future-ready innovators</span>.
-                  </p>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent animate-holographic-scan"></div>
-                </div>
-                
-                {/* Enhanced System Metrics */}
-                <div className="grid grid-cols-2 gap-4 mt-8">
-                  <div className="glass-card rounded-xl p-4 border border-emerald-500/30 animate-floating-panel">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <Activity className="w-5 h-5 text-emerald-400 animate-neural-pulse" />
-                      <span className="text-xs font-mono text-emerald-300 tracking-wider">NEURAL ACTIVITY</span>
-                    </div>
-                    <div className="text-2xl font-black text-emerald-400 animate-neon-pulse">98.7%</div>
-                    <div className="w-full bg-slate-800/50 rounded-full h-1 mt-2">
-                      <div className="bg-gradient-to-r from-emerald-500 to-emerald-400 h-1 rounded-full animate-data-flow" style={{width: '98.7%'}}></div>
-                    </div>
-                  </div>
-                  <div className="glass-card rounded-xl p-4 border border-purple-500/30 animate-floating-panel" style={{animationDelay: '0.5s'}}>
-                    <div className="flex items-center space-x-3 mb-2">
-                      <Cpu className="w-5 h-5 text-purple-400 animate-neural-pulse" />
-                      <span className="text-xs font-mono text-purple-300 tracking-wider">AI PROCESSING</span>
-                    </div>
-                    <div className="text-2xl font-black text-purple-400 animate-neon-pulse">OPTIMAL</div>
-                    <div className="flex space-x-1 mt-2">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                      <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-                    </div>
-                  </div>
-                </div>
+                <p className="text-lg md:text-xl cyber-text-muted leading-relaxed max-w-lg font-mono">
+                  From coding to creativity, we bridge human intelligence with artificial intelligence to shape 
+                  <span className="cyber-primary font-bold"> future-ready innovators</span>.
+                </p>
               </div>
 
-              {/* Interactive Buttons */}
+              {/* Cyberpunk Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white px-8 py-3 text-base font-semibold rounded-xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 hover:scale-105 border-0 relative overflow-hidden group"
+                  className="cyber-button px-8 py-4 text-base font-bold rounded-full font-mono relative overflow-hidden group"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-green-400/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                   <Bot className="w-5 h-5 mr-2 relative z-10" />
-                  <span className="relative z-10">Join AI Revolution</span>
+                  <span className="relative z-10">JOIN AI REVOLUTION</span>
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-2 border-slate-600 text-slate-300 hover:bg-slate-800/50 hover:border-cyan-400 hover:text-cyan-400 px-8 py-3 text-base font-semibold rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105 relative overflow-hidden group"
+                  className="cyber-border cyber-text hover:cyber-primary hover:cyber-glow px-8 py-4 text-base font-bold rounded-full font-mono transition-all duration-300 hover:scale-105 relative overflow-hidden group"
                 >
-                  <div className="absolute inset-0 bg-cyan-400/10 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-green-500/10 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
                   <Sparkles className="w-5 h-5 mr-2 relative z-10" />
-                  <span className="relative z-10">Explore Neural Networks</span>
+                  <span className="relative z-10">EXPLORE PROJECTS</span>
                 </Button>
               </div>
             </div>
 
-            {/* Right Content - Animated Robot */}
+            {/* Right Content - Cyberpunk Robot Display */}
             <div className="relative flex justify-center lg:justify-end order-1 lg:order-2">
               <div className="relative">
-                {/* Holographic Grid Background */}
-                <div className="absolute inset-0 w-96 h-96 opacity-20">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/30 via-transparent to-blue-500/30 rounded-full animate-spin-slow"></div>
-                  <div className="absolute inset-4 border border-cyan-400/30 rounded-full"></div>
-                  <div className="absolute inset-8 border border-blue-400/20 rounded-full animate-pulse"></div>
-                  <div className="absolute inset-12 border border-purple-400/20 rounded-full"></div>
-                </div>
-                
-                {/* Robot Container with Enhanced Effects */}
+                {/* Cyberpunk Robot Container */}
                 <div className="relative w-80 h-80 lg:w-96 lg:h-96 flex items-center justify-center">
-                  {/* Dynamic Glow */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${robotPulse ? 'from-cyan-500/30 via-blue-500/20 to-purple-500/30' : 'from-blue-500/20 via-purple-500/30 to-cyan-500/20'} rounded-full blur-3xl transition-all duration-2000`}></div>
+                  {/* Cyberpunk Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/40 via-green-500/20 to-cyan-500/40 rounded-2xl blur-3xl cyber-glow"></div>
                   
-                  {/* Robot Image with Hover Effects */}
+                  {/* Robot Image with Cyberpunk Effects */}
                   <div className="relative z-10 robot-container group cursor-pointer">
-                    <div className={`transition-all duration-500 ${robotPulse ? 'scale-110' : 'scale-105'} group-hover:scale-115`}>
+                    <div className="transition-all duration-500 group-hover:scale-110 group-hover:rotate-2">
                       <img 
                         src="https://aiec-iitm.in/static/media/robot2.3dac1472b94749acbb23.png" 
                         alt="AI Robot" 
-                        className="w-64 h-64 lg:w-80 lg:h-80 object-contain filter drop-shadow-2xl"
+                        className="w-64 h-64 lg:w-80 lg:h-80 object-contain rounded-2xl sm:rounded-3xl shadow-2xl filter drop-shadow-2xl"
                         style={{
-                          filter: `brightness(1.1) contrast(1.1) drop-shadow(0 0 30px rgba(34, 211, 238, 0.4))`
+                          filter: 'brightness(1.2) contrast(1.2) drop-shadow(0 0 30px rgba(0, 255, 136, 0.6))'
                         }}
                       />
                     </div>
                     
-                    {/* Interactive Particles around Robot */}
-                    <div className="absolute inset-0">
-                      {particles.slice(0, 12).map((particle) => (
-                        <div
-                          key={particle.id}
-                          className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-float opacity-60"
-                          style={{
-                            left: `${particle.x}%`,
-                            top: `${particle.y}%`,
-                            animationDelay: `${particle.delay}s`,
-                            animationDuration: `${particle.duration}s`,
-                          }}
-                        />
-                      ))}
+                    {/* Cyberpunk UI Elements */}
+                    <div className="absolute top-4 right-4 cyber-card rounded-lg p-3 cyber-glow">
+                      <div className="flex items-center space-x-2">
+                        <Power className="w-4 h-4 cyber-primary" />
+                        <span className="text-xs font-mono cyber-primary font-bold">ONLINE</span>
+                      </div>
                     </div>
-                  </div>
-                  
-                  {/* Floating UI Elements */}
-                  <div className="absolute top-4 right-4 glass-card rounded-lg p-2">
-                    <div className="flex items-center space-x-2">
-                      <Power className="w-3 h-3 text-emerald-400" />
-                      <span className="text-xs font-mono text-slate-300">ONLINE</span>
-                    </div>
-                  </div>
-                  
-                  <div className="absolute bottom-4 left-4 glass-card rounded-lg p-2">
-                    <div className="flex items-center space-x-2">
-                      <Wifi className="w-3 h-3 text-purple-400" />
-                      <span className="text-xs font-mono text-slate-300">CONNECTED</span>
+                    
+                    <div className="absolute bottom-4 left-4 cyber-card rounded-lg p-3 cyber-glow">
+                      <div className="flex items-center space-x-2">
+                        <Wifi className="w-4 h-4 cyber-secondary" />
+                        <span className="text-xs font-mono cyber-secondary font-bold">CONNECTED</span>
+                      </div>
                     </div>
                   </div>
                 </div>

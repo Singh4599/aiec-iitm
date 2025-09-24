@@ -200,42 +200,42 @@ const Team = () => {
     }
   ];
 
-  const renderDepartment = (title, members, bgColor = "glass-section") => (
+  const renderDepartment = (title, members, bgColor = "cyber-bg/50 backdrop-blur-sm") => (
     <section className={`py-20 px-4 ${bgColor}`}>
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-black mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-black mb-6 cyber-primary font-mono">
             {title}
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {members.map((member, index) => (
-            <Card key={index} className="glass-card rounded-2xl premium-card">
+            <Card key={index} className="cyber-card rounded-2xl cyber-glow">
               <CardHeader className="text-center pb-4">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-500 p-1">
-                  <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
-                    <Users className="w-16 h-16 text-blue-400" />
+                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-cyan-500 to-green-500 p-1 cyber-glow">
+                  <div className="w-full h-full rounded-full cyber-bg flex items-center justify-center">
+                    <Users className="w-16 h-16 cyber-primary" />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-white">{member.name}</h3>
-                <p className="text-blue-400 font-semibold">{member.role}</p>
+                <h3 className="text-xl font-bold cyber-text font-mono">{member.name}</h3>
+                <p className="cyber-primary font-semibold font-mono">{member.role}</p>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-slate-400 mb-4">{member.description}</p>
+                <p className="cyber-text-muted mb-4 font-mono">{member.description}</p>
                 <div className="flex justify-center space-x-4">
                   {member.linkedin && (
-                    <a href={member.linkedin} className="text-blue-400 hover:text-blue-300 transition-colors">
+                    <a href={member.linkedin} className="cyber-secondary hover:cyber-primary transition-colors">
                       <Linkedin className="w-5 h-5" />
                     </a>
                   )}
                   {member.github && (
-                    <a href={member.github} className="text-slate-400 hover:text-white transition-colors">
+                    <a href={member.github} className="cyber-text-muted hover:cyber-text transition-colors">
                       <Github className="w-5 h-5" />
                     </a>
                   )}
                   {member.instagram && (
-                    <a href={member.instagram} className="text-pink-400 hover:text-pink-300 transition-colors">
+                    <a href={member.instagram} className="cyber-accent hover:cyber-primary transition-colors">
                       <Instagram className="w-5 h-5" />
                     </a>
                   )}
@@ -249,21 +249,21 @@ const Team = () => {
   );
 
   return (
-    <div className="min-h-screen pt-16 relative">
-      {/* Glassmorphic Background */}
+    <div className="min-h-screen pt-16 relative cyber-bg">
+      {/* Cyberpunk Background */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-        <div className="absolute top-1/3 left-1/3 w-72 h-72 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute inset-0 cyber-bg"></div>
+        <div className="absolute top-1/3 left-1/3 w-72 h-72 bg-gradient-to-r from-cyan-500/20 to-green-500/20 rounded-full blur-3xl animate-float cyber-glow"></div>
         <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-gradient-to-r from-cyan-500/10 to-emerald-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
       </div>
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Our Team
+            <h1 className="text-4xl md:text-6xl font-black mb-6 cyber-primary font-mono">
+              OUR TEAM
             </h1>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl cyber-text-muted max-w-3xl mx-auto leading-relaxed font-mono">
               Meet the people who lead and build AIEC IITM
             </p>
           </div>
@@ -271,59 +271,59 @@ const Team = () => {
       </section>
 
       {/* Faculty Heads */}
-      {renderDepartment("Faculty Heads", facultyHeads, "glass-section")}
+      {renderDepartment("Faculty Heads", facultyHeads, "cyber-bg/50 backdrop-blur-sm")}
 
       {/* Leadership */}
-      {renderDepartment("Leadership", leadership, "glass-section")}
+      {renderDepartment("Leadership", leadership, "cyber-bg/50 backdrop-blur-sm")}
 
       {/* Technical Department */}
-      {renderDepartment("Technical Department", technicalDepartment, "glass-section")}
+      {renderDepartment("Technical Department", technicalDepartment, "cyber-bg/50 backdrop-blur-sm")}
 
       {/* Graphics Department */}
-      {renderDepartment("Graphics Department", graphicsDepartment, "glass-section")}
+      {renderDepartment("Graphics Department", graphicsDepartment, "cyber-bg/50 backdrop-blur-sm")}
 
       {/* Content & Editorial Department */}
-      {renderDepartment("Content & Editorial Department", contentEditorialDepartment, "glass-section")}
+      {renderDepartment("Content & Editorial Department", contentEditorialDepartment, "cyber-bg/50 backdrop-blur-sm")}
 
       {/* Event Management & Marketing Department */}
-      {renderDepartment("Event Management & Marketing Department", eventManagementDepartment, "glass-section")}
+      {renderDepartment("Event Management & Marketing Department", eventManagementDepartment, "cyber-bg/50 backdrop-blur-sm")}
 
       {/* PR Department */}
-      <section className="py-20 px-4 glass-section">
+      <section className="py-20 px-4 cyber-bg/50 backdrop-blur-sm">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              PR Department
+            <h2 className="text-3xl md:text-4xl font-black mb-6 cyber-primary font-mono">
+              PR DEPARTMENT
             </h2>
           </div>
 
           <div className="grid md:grid-cols-1 gap-8 max-w-2xl mx-auto">
             {prDepartment.map((member, index) => (
-              <Card key={index} className="glass-card rounded-2xl premium-card">
+              <Card key={index} className="cyber-card rounded-2xl cyber-glow">
                 <CardHeader className="text-center pb-4">
-                  <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-500 p-1">
-                    <div className="w-full h-full rounded-full bg-slate-800 flex items-center justify-center">
-                      <Users className="w-16 h-16 text-blue-400" />
+                  <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-to-br from-cyan-500 to-green-500 p-1 cyber-glow">
+                    <div className="w-full h-full rounded-full cyber-bg flex items-center justify-center">
+                      <Users className="w-16 h-16 cyber-primary" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-white">{member.name}</h3>
-                  <p className="text-blue-400 font-semibold">{member.role}</p>
+                  <h3 className="text-xl font-bold cyber-text font-mono">{member.name}</h3>
+                  <p className="cyber-primary font-semibold font-mono">{member.role}</p>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <p className="text-slate-400 mb-4">{member.description}</p>
+                  <p className="cyber-text-muted mb-4 font-mono">{member.description}</p>
                   <div className="flex justify-center space-x-4">
                     {member.linkedin && (
-                      <a href={member.linkedin} className="text-blue-400 hover:text-blue-300 transition-colors">
+                      <a href={member.linkedin} className="cyber-secondary hover:cyber-primary transition-colors">
                         <Linkedin className="w-5 h-5" />
                       </a>
                     )}
                     {member.github && (
-                      <a href={member.github} className="text-slate-400 hover:text-white transition-colors">
+                      <a href={member.github} className="cyber-text-muted hover:cyber-text transition-colors">
                         <Github className="w-5 h-5" />
                       </a>
                     )}
                     {member.instagram && (
-                      <a href={member.instagram} className="text-pink-400 hover:text-pink-300 transition-colors">
+                      <a href={member.instagram} className="cyber-accent hover:cyber-primary transition-colors">
                         <Instagram className="w-5 h-5" />
                       </a>
                     )}
@@ -336,13 +336,13 @@ const Team = () => {
       </section>
 
       {/* Advertising Department */}
-      {renderDepartment("Advertising Department", advertisingDepartment, "glass-section")}
+      {renderDepartment("Advertising Department", advertisingDepartment, "cyber-bg/50 backdrop-blur-sm")}
 
       {/* Video Editing & Photography Department */}
-      {renderDepartment("Video Editing & Photography Department", videoEditingDepartment, "glass-section")}
+      {renderDepartment("Video Editing & Photography Department", videoEditingDepartment, "cyber-bg/50 backdrop-blur-sm")}
 
       {/* Social Media Department */}
-      {renderDepartment("Social Media Department", socialMediaDepartment, "glass-section")}
+      {renderDepartment("Social Media Department", socialMediaDepartment, "cyber-bg/50 backdrop-blur-sm")}
     </div>
   );
 };

@@ -3,10 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
-import { Sonner } from "@/components/ui/sonner";
-import TestComponent from "./TestComponent";
+import { Toaster as SonnerToaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/theme-provider";
+// import TestComponent from "./TestComponent";
 import Navbar from "./components/Navbar";
 import CyberpunkBackground from "./components/CyberpunkBackground";
+import SplashCursor from "./components/SplashCursor";
 import Home from "./pages/Home";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
@@ -49,14 +51,17 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+      <ThemeProvider defaultTheme="dark" storageKey="aiec-ui-theme">
+        <TooltipProvider>
+          <Toaster />
+          <SonnerToaster />
+        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <div className="min-h-screen relative overflow-hidden">
             {/* Advanced 3D Cyberpunk Background */}
             <CyberpunkBackground />
-            <TestComponent />
+            {/* Splash Cursor Effect */}
+            <SplashCursor />
+            {/* <TestComponent /> */}
             {isAppLoaded && <Navbar />}
             <Routes>
               <Route path="/" element={<Home isAppLoaded={isAppLoaded} showLoadingScreen={showLoadingScreen} />} />
@@ -68,7 +73,8 @@ const App = () => {
             </Routes>
           </div>
         </BrowserRouter>
-      </TooltipProvider>
+        </TooltipProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 };

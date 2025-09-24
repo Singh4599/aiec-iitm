@@ -45,17 +45,17 @@ const CyberpunkBackground = () => {
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
-      {/* Base Dark Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-black"></div>
+      {/* Base Light Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50"></div>
       
       {/* Animated Grid Background */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-10">
         <div 
           className="w-full h-full animate-cyber-grid"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px)
+              linear-gradient(rgba(34, 211, 238, 0.2) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(34, 211, 238, 0.2) 1px, transparent 1px)
             `,
             backgroundSize: '50px 50px',
             transform: 'perspective(1000px) rotateX(60deg)',
@@ -68,7 +68,7 @@ const CyberpunkBackground = () => {
         {matrixRain.map((rain) => (
           <div
             key={rain.id}
-            className="absolute text-green-400 font-mono text-xs opacity-60 animate-matrix-rain"
+            className="absolute text-cyan-600 font-mono text-xs opacity-40 animate-matrix-rain"
             style={{
               left: `${rain.x}%`,
               animationDelay: `${rain.delay}s`,
@@ -199,10 +199,10 @@ const CyberpunkBackground = () => {
 
       {/* Ambient Light Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
-        <div className="absolute top-3/4 left-1/3 w-72 h-72 bg-pink-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: '6s'}}></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-sky-400/20 rounded-full blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
+        <div className="absolute top-3/4 left-1/3 w-72 h-72 bg-indigo-400/20 rounded-full blur-3xl animate-float" style={{animationDelay: '6s'}}></div>
       </div>
 
       {/* Distortion Effect Overlay */}
@@ -286,7 +286,7 @@ const HologramPanel = ({ type }) => {
   };
 
   return (
-    <div className="glass-card border border-cyan-500/30 rounded-lg backdrop-blur-md bg-slate-900/20 animate-hologram-flicker">
+    <div className="glass-card border border-cyan-500/30 rounded-lg backdrop-blur-md bg-white/20 animate-hologram-flicker">
       {renderContent()}
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-lg"></div>
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-50"></div>

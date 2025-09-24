@@ -92,15 +92,15 @@ const Events = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16 bg-slate-900">
+    <div className="min-h-screen pt-16 cyber-bg">
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Upcoming Events
+            <h1 className="text-4xl md:text-6xl font-black mb-6 cyber-primary font-mono">
+              UPCOMING EVENTS
             </h1>
-            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl cyber-text-muted max-w-4xl mx-auto leading-relaxed font-mono">
               Exciting opportunities await—dive into workshops, fests designed to spark innovation and growth.
             </p>
           </div>

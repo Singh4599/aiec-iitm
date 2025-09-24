@@ -77,15 +77,15 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16 bg-slate-900">
+    <div className="min-h-screen pt-16 cyber-bg">
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              About AIEC IITM
+            <h1 className="text-4xl md:text-6xl font-black mb-6 cyber-primary font-mono">
+              ABOUT AIEC IITM
             </h1>
-            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl cyber-text-muted max-w-4xl mx-auto leading-relaxed font-mono">
               The AIEC of IITM Janakpuri is a hub for innovation and learning in AI, ML, and emerging technologies. Through 
               workshops, projects, competitions, and industry collaborations, it equips students with hands-on skills to 
               become problem-solvers and innovators driving real-world impact.
@@ -95,74 +95,74 @@ const About = () => {
       </section>
 
       {/* Core Values Section */}
-      <section className="py-20 px-4 bg-slate-800/30">
+      <section className="py-20 px-4 cyber-bg/50 backdrop-blur-sm">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-slide-in-left">
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 hover:bg-slate-800/70 transition-all duration-300 premium-card">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
-                    <Code className="w-6 h-6 text-white" />
+                <div className="cyber-card rounded-2xl p-6 hover:cyber-glow transition-all duration-300">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-green-500 rounded-xl flex items-center justify-center cyber-glow">
+                    <Code className="w-6 h-6 text-black font-bold" />
                   </div>
-                  <h3 className="text-sm font-bold text-white mb-2 text-center tracking-wider">Development</h3>
+                  <h3 className="text-sm font-bold cyber-primary mb-2 text-center tracking-wider font-mono">DEVELOPMENT</h3>
                 </div>
                 
-                <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 hover:bg-slate-800/70 transition-all duration-300 premium-card">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                    <Brain className="w-6 h-6 text-white" />
+                <div className="cyber-card rounded-2xl p-6 hover:cyber-glow transition-all duration-300">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center cyber-glow">
+                    <Brain className="w-6 h-6 text-white font-bold" />
                   </div>
-                  <h3 className="text-sm font-bold text-white mb-2 text-center tracking-wider">AI/ML</h3>
+                  <h3 className="text-sm font-bold cyber-primary mb-2 text-center tracking-wider font-mono">AI/ML</h3>
                 </div>
                 
-                <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 hover:bg-slate-800/70 transition-all duration-300 premium-card">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center">
-                    <Lightbulb className="w-6 h-6 text-white" />
+                <div className="cyber-card rounded-2xl p-6 hover:cyber-glow transition-all duration-300">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-green-500 to-cyan-500 rounded-xl flex items-center justify-center cyber-glow">
+                    <Lightbulb className="w-6 h-6 text-black font-bold" />
                   </div>
-                  <h3 className="text-sm font-bold text-white mb-2 text-center tracking-wider">Innovation</h3>
+                  <h3 className="text-sm font-bold cyber-primary mb-2 text-center tracking-wider font-mono">INNOVATION</h3>
                 </div>
                 
-                <div className="bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 hover:bg-slate-800/70 transition-all duration-300 premium-card">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center">
-                    <Users className="w-6 h-6 text-white" />
+                <div className="cyber-card rounded-2xl p-6 hover:cyber-glow transition-all duration-300">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center cyber-glow">
+                    <Users className="w-6 h-6 text-white font-bold" />
                   </div>
-                  <h3 className="text-sm font-bold text-white mb-2 text-center tracking-wider">Community</h3>
+                  <h3 className="text-sm font-bold cyber-primary mb-2 text-center tracking-wider font-mono">COMMUNITY</h3>
                 </div>
               </div>
               
               <div className="text-center">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-8 py-3 text-lg font-semibold rounded-2xl shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105 border-0"
+                  className="cyber-button px-8 py-3 text-lg font-bold rounded-2xl font-mono"
                 >
-                  Learn More About Us
+                  LEARN MORE ABOUT US
                 </Button>
               </div>
             </div>
 
-            <div className="bg-slate-800/40 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 animate-slide-in-right">
+            <div className="cyber-card rounded-2xl p-8 animate-slide-in-right cyber-glow">
               <div className="space-y-6">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                    <h3 className="text-lg font-bold text-white">Beyond Campus Visits</h3>
+                    <div className="w-3 h-3 cyber-accent rounded-full cyber-glow"></div>
+                    <h3 className="text-lg font-bold cyber-text font-mono">BEYOND CAMPUS VISITS</h3>
                   </div>
-                  <p className="text-slate-400 text-sm">Exploring diverse opportunities outside the classroom.</p>
+                  <p className="cyber-text-muted text-sm font-mono">Exploring diverse opportunities outside the classroom.</p>
                 </div>
                 
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                    <h3 className="text-lg font-bold text-white">Event Sphere</h3>
+                    <div className="w-3 h-3 cyber-secondary rounded-full cyber-glow"></div>
+                    <h3 className="text-lg font-bold cyber-text font-mono">EVENT SPHERE</h3>
                   </div>
-                  <p className="text-slate-400 text-sm">A vibrant space for fests, competitions, and collaborations.</p>
+                  <p className="cyber-text-muted text-sm font-mono">A vibrant space for fests, competitions, and collaborations.</p>
                 </div>
                 
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                    <h3 className="text-lg font-bold text-white">Innovative Workshops</h3>
+                    <div className="w-3 h-3 cyber-primary rounded-full cyber-glow"></div>
+                    <h3 className="text-lg font-bold cyber-text font-mono">INNOVATIVE WORKSHOPS</h3>
                   </div>
-                  <p className="text-slate-400 text-sm">Hands-on learning with the latest AI & tech tools.</p>
+                  <p className="cyber-text-muted text-sm font-mono">Hands-on learning with the latest AI & tech tools.</p>
                 </div>
               </div>
             </div>
