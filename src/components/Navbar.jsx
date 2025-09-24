@@ -51,7 +51,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 ${
         scrolled
           ? "cyber-bg/90 backdrop-blur-md shadow-lg shadow-cyan-500/20 border-b cyber-border"
           : "bg-transparent"
@@ -117,6 +117,12 @@ const Navbar = () => {
             >
               TEAM
             </Link>
+            <Link 
+              to="/admin" 
+              className="cyber-text hover:cyber-primary transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:cyber-primary after:transition-all hover:after:w-full font-mono"
+            >
+              ADMIN
+            </Link>
             <a 
               href="#past-events"
               onClick={(e) => {
@@ -163,6 +169,7 @@ const Navbar = () => {
             <a href="#events" onClick={(e) => { e.preventDefault(); handleSectionClick('#events'); setIsOpen(false); }} className="block px-3 py-2 cyber-text hover:cyber-primary cursor-pointer transition-colors font-mono">EVENTS</a>
             <a href="#projects" onClick={(e) => { e.preventDefault(); handleSectionClick('#projects'); setIsOpen(false); }} className="block px-3 py-2 cyber-text hover:cyber-primary cursor-pointer transition-colors font-mono">PROJECTS</a>
             <Link to="/team" className="block px-3 py-2 cyber-text hover:cyber-primary transition-colors font-mono">TEAM</Link>
+            <Link to="/admin" className="block px-3 py-2 cyber-text hover:cyber-primary transition-colors font-mono">ADMIN</Link>
             <a href="#past-events" onClick={(e) => { e.preventDefault(); handleSectionClick('#past-events'); setIsOpen(false); }} className="block px-3 py-2 cyber-text hover:cyber-primary cursor-pointer transition-colors font-mono">CONTACT</a>
           </div>
         </div>

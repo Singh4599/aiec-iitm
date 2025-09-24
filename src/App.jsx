@@ -18,36 +18,37 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [isAppLoaded, setIsAppLoaded] = useState(false);
-  const [showLoadingScreen, setShowLoadingScreen] = useState(true);
+  const [isAppLoaded, setIsAppLoaded] = useState(true);
+  const [showLoadingScreen, setShowLoadingScreen] = useState(false);
 
-  useEffect(() => {
-    // Check if this is internal navigation (not a page load/reload)
-    const hasLoadedInSession = sessionStorage.getItem('hasLoadedBefore');
-    const isPageLoad = !hasLoadedInSession || performance.navigation.type === performance.navigation.TYPE_RELOAD;
-    
-    if (isPageLoad) {
-      // First load or page reload - show loading screen
-      setShowLoadingScreen(true);
-      setIsAppLoaded(false);
-      
-      // Listen for loading completion from Hero component
-      const handleLoadingComplete = () => {
-        setIsAppLoaded(true);
-        sessionStorage.setItem('hasLoadedBefore', 'true');
-      };
+  // Loading disabled - app loads immediately
+  // useEffect(() => {
+  //   // Check if this is internal navigation (not a page load/reload)
+  //   const hasLoadedInSession = sessionStorage.getItem('hasLoadedBefore');
+  //   const isPageLoad = !hasLoadedInSession || performance.navigation.type === performance.navigation.TYPE_RELOAD;
+  //   
+  //   if (isPageLoad) {
+  //     // First load or page reload - show loading screen
+  //     setShowLoadingScreen(true);
+  //     setIsAppLoaded(false);
+  //     
+  //     // Listen for loading completion from Hero component
+  //     const handleLoadingComplete = () => {
+  //       setIsAppLoaded(true);
+  //       sessionStorage.setItem('hasLoadedBefore', 'true');
+  //     };
 
-      window.addEventListener('heroLoadingComplete', handleLoadingComplete);
-      
-      return () => {
-        window.removeEventListener('heroLoadingComplete', handleLoadingComplete);
-      };
-    } else {
-      // Internal navigation - skip loading
-      setShowLoadingScreen(false);
-      setIsAppLoaded(true);
-    }
-  }, []);
+  //     window.addEventListener('heroLoadingComplete', handleLoadingComplete);
+  //     
+  //     return () => {
+  //       window.removeEventListener('heroLoadingComplete', handleLoadingComplete);
+  //     };
+  //   } else {
+  //     // Internal navigation - skip loading
+  //     setShowLoadingScreen(false);
+  //     setIsAppLoaded(true);
+  //   }
+  // }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -56,13 +57,13 @@ const App = () => {
           <Toaster />
           <SonnerToaster />
         <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-          <div className="min-h-screen relative overflow-hidden">
+          <div className="min-h-screen relative overflow-hidden transition-all duration-300 ease-in-out">
             {/* Advanced 3D Cyberpunk Background */}
             <CyberpunkBackground />
             {/* Splash Cursor Effect */}
             <SplashCursor />
             {/* <TestComponent /> */}
-            {isAppLoaded && <Navbar />}
+            <Navbar />
             <Routes>
               <Route path="/" element={<Home isAppLoaded={isAppLoaded} showLoadingScreen={showLoadingScreen} />} />
               <Route path="/team" element={<Team />} />

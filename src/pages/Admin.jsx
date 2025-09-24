@@ -48,14 +48,7 @@ const Admin = () => {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen relative overflow-hidden flex items-center justify-center px-4">
-        {/* 3D Background */}
-        <div className="fixed inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
-        </div>
+      <div className="min-h-screen relative overflow-hidden flex items-center justify-center px-4 pt-20">
 
         <Card className="glass-card max-w-md w-full transform hover:scale-105 transition-all duration-500 premium-card">
           <CardHeader className="text-center">
@@ -103,30 +96,7 @@ const Admin = () => {
   }
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      {/* 3D Animated Background */}
-      <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: '6s'}}></div>
-        
-        {/* Floating particles */}
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-cyan-400/20 rounded-full animate-float"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 6}s`,
-                animationDuration: `${4 + Math.random() * 4}s`,
-              }}
-            />
-          ))}
-        </div>
-      </div>
+    <div className="min-h-screen relative overflow-hidden pt-20">
 
       <div className="container mx-auto px-4 py-8 pt-24 relative z-10">
         {/* 3D Header */}
@@ -624,6 +594,114 @@ const SubmissionsView = () => (
   <div className="text-center py-12">
     <h2 className="text-2xl font-bold text-primary mb-4">Form Submissions</h2>
     <p className="text-muted-foreground">Submissions viewer coming soon...</p>
+  </div>
+);
+
+const AnalyticsDashboard = () => (
+  <div className="space-y-8">
+    <div className="glass-card rounded-2xl p-8">
+      <h2 className="text-3xl font-black bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent mb-2">
+        Analytics Dashboard
+      </h2>
+      <p className="text-slate-400 mb-8">Real-time website analytics and insights</p>
+      
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="glass-card p-6 rounded-xl">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-slate-400 text-sm">Page Views</p>
+              <p className="text-2xl font-bold text-white">12,543</p>
+            </div>
+            <Activity className="w-8 h-8 text-orange-400" />
+          </div>
+        </div>
+        <div className="glass-card p-6 rounded-xl">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-slate-400 text-sm">Unique Visitors</p>
+              <p className="text-2xl font-bold text-white">8,921</p>
+            </div>
+            <Users className="w-8 h-8 text-blue-400" />
+          </div>
+        </div>
+        <div className="glass-card p-6 rounded-xl">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-slate-400 text-sm">Bounce Rate</p>
+              <p className="text-2xl font-bold text-white">23.4%</p>
+            </div>
+            <BarChart3 className="w-8 h-8 text-green-400" />
+          </div>
+        </div>
+        <div className="glass-card p-6 rounded-xl">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-slate-400 text-sm">Avg. Session</p>
+              <p className="text-2xl font-bold text-white">4m 32s</p>
+            </div>
+            <Globe className="w-8 h-8 text-purple-400" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const SettingsPanel = () => (
+  <div className="space-y-8">
+    <div className="glass-card rounded-2xl p-8">
+      <h2 className="text-3xl font-black bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent mb-2">
+        System Settings
+      </h2>
+      <p className="text-slate-400 mb-8">Configure your website settings and preferences</p>
+      
+      <div className="space-y-6">
+        <div className="glass-card p-6 rounded-xl">
+          <h3 className="text-xl font-bold text-white mb-4">General Settings</h3>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-white font-medium">Maintenance Mode</p>
+                <p className="text-slate-400 text-sm">Enable maintenance mode for the website</p>
+              </div>
+              <Switch />
+            </div>
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-white font-medium">Email Notifications</p>
+                <p className="text-slate-400 text-sm">Receive email notifications for new submissions</p>
+              </div>
+              <Switch defaultChecked />
+            </div>
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-white font-medium">Dark Mode</p>
+                <p className="text-slate-400 text-sm">Enable dark theme for admin panel</p>
+              </div>
+              <Switch defaultChecked />
+            </div>
+          </div>
+        </div>
+        
+        <div className="glass-card p-6 rounded-xl">
+          <h3 className="text-xl font-bold text-white mb-4">Security Settings</h3>
+          <div className="space-y-4">
+            <Button className="bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-500 hover:to-pink-500">
+              <Lock className="w-4 h-4 mr-2" />
+              Change Admin Password
+            </Button>
+            <Button variant="outline" className="border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10">
+              <Download className="w-4 h-4 mr-2" />
+              Export Data
+            </Button>
+            <Button variant="outline" className="border-orange-500/30 text-orange-400 hover:bg-orange-500/10">
+              <Upload className="w-4 h-4 mr-2" />
+              Import Data
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 );
 

@@ -16,7 +16,7 @@
 
 /* Cyberpunk Base Styles */
 body {
-  background: var(--cyber-bg);
+  background: #000000;
   color: var(--cyber-text);
   font-family: 'Inter', monospace;
   overflow-x: hidden;
@@ -35,6 +35,26 @@ html {
 /* Performance optimizations */
 * {
   box-sizing: border-box;
+}
+
+/* Enhanced performance optimizations for smooth animations */
+.animate-particle-drift,
+.animate-matrix-rain,
+.animate-floating-panel,
+.animate-hologram-flicker {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Reduce motion for better performance on lower-end devices */
+@media (prefers-reduced-motion: reduce) {
+  .animate-particle-drift,
+  .animate-matrix-rain,
+  .animate-floating-panel,
+  .animate-hologram-flicker {
+    animation: none !important;
+  }
 }
 
 *::before,
@@ -783,6 +803,60 @@ All colors MUST be HSL.
   }
 }
 
+/* Galaxy and Space Effects */
+@keyframes twinkle {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes galaxy-drift {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--drift-x, 100px), var(--drift-y, -100px)) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes cosmic-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes nebula-flow {
+  0% {
+    transform: translateX(-100%) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(100vw) rotate(360deg);
+    opacity: 0;
+  }
+}
+
 .splash-ripple {
   animation: splash-ripple 0.4s ease-out;
 }
@@ -793,4 +867,21 @@ All colors MUST be HSL.
 
 .splash-float {
   animation: splash-float 2s ease-in-out infinite;
+}
+
+/* Galaxy Effect Classes */
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.animate-galaxy-drift {
+  animation: galaxy-drift 15s linear infinite;
+}
+
+.animate-cosmic-pulse {
+  animation: cosmic-pulse 3s ease-in-out infinite;
+}
+
+.animate-nebula-flow {
+  animation: nebula-flow 20s linear infinite;
 }
