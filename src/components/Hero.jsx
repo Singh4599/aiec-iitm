@@ -21,20 +21,20 @@ const Hero = ({ id, showLoadingScreen }) => {
       setIsLoaded(false);
       setShowContent(false);
       
-      // Faster loading simulation
+      // Ultra-fast loading simulation
       const loadingInterval = setInterval(() => {
         setLoadingProgress(prev => {
           if (prev >= 100) {
             clearInterval(loadingInterval);
             setTimeout(() => {
               setIsLoaded(true);
-              setTimeout(() => setShowContent(true), 200);
-            }, 300);
+              setTimeout(() => setShowContent(true), 100);
+            }, 150);
             return 100;
           }
-          return prev + Math.random() * 25 + 15;
+          return prev + Math.random() * 30 + 20;
         });
-      }, 60);
+      }, 40);
 
       return () => clearInterval(loadingInterval);
     } else {

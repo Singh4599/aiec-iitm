@@ -20,11 +20,37 @@ body {
   color: var(--cyber-text);
   font-family: 'Inter', monospace;
   overflow-x: hidden;
+  /* Performance optimizations */
+  will-change: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 /* Remove unwanted scroll effects */
 html {
   scroll-behavior: smooth;
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Optimize animations for better performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 * {
@@ -61,11 +87,11 @@ html {
 }
 
 @keyframes cyber-glow {
-  0%, 100% { 
-    box-shadow: 0 0 5px var(--cyber-primary), 0 0 10px var(--cyber-primary), 0 0 15px var(--cyber-primary);
+  0%, 100% {
+    box-shadow: 0 0 5px var(--cyber-primary), 0 0 10px var(--cyber-primary);
   }
-  50% { 
-    box-shadow: 0 0 10px var(--cyber-primary), 0 0 20px var(--cyber-primary), 0 0 30px var(--cyber-primary);
+  50% {
+    box-shadow: 0 0 8px var(--cyber-primary), 0 0 15px var(--cyber-primary);
   }
 }
 
@@ -696,6 +722,9 @@ All colors MUST be HSL.
   background: rgba(0, 0, 0, 0.8);
   border: 1px solid var(--cyber-primary);
   backdrop-filter: blur(10px);
+  /* Performance optimizations */
+  will-change: transform, box-shadow;
+  transform: translateZ(0);
 }
 
 .cyber-button {
@@ -722,14 +751,14 @@ All colors MUST be HSL.
   box-shadow: 0 0 10px var(--cyber-primary);
 }
 
-/* SplashCursor Animations */
+/* Optimized SplashCursor Animations */
 @keyframes splash-ripple {
   0% {
     transform: scale(0);
     opacity: 1;
   }
   100% {
-    transform: scale(4);
+    transform: scale(3);
     opacity: 0;
   }
 }
@@ -737,11 +766,11 @@ All colors MUST be HSL.
 @keyframes splash-pulse {
   0%, 100% {
     transform: scale(1);
-    opacity: 0.8;
+    opacity: 0.6;
   }
   50% {
-    transform: scale(1.2);
-    opacity: 1;
+    transform: scale(1.1);
+    opacity: 0.8;
   }
 }
 
@@ -749,25 +778,19 @@ All colors MUST be HSL.
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
   }
-  25% {
-    transform: translateY(-10px) rotate(90deg);
-  }
   50% {
-    transform: translateY(-5px) rotate(180deg);
-  }
-  75% {
-    transform: translateY(-15px) rotate(270deg);
+    transform: translateY(-8px) rotate(180deg);
   }
 }
 
 .splash-ripple {
-  animation: splash-ripple 0.6s ease-out;
+  animation: splash-ripple 0.4s ease-out;
 }
 
 .splash-pulse {
-  animation: splash-pulse 2s ease-in-out infinite;
+  animation: splash-pulse 1.5s ease-in-out infinite;
 }
 
 .splash-float {
-  animation: splash-float 3s ease-in-out infinite;
+  animation: splash-float 2s ease-in-out infinite;
 }
