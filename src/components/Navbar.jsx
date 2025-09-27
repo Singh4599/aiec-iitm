@@ -53,9 +53,10 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-300 ${
         scrolled
-          ? "cyber-bg/90 backdrop-blur-md shadow-lg shadow-cyan-500/20 border-b cyber-border"
+          ? "bg-black/90 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
+      style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -131,7 +132,7 @@ const Navbar = () => {
               }}
               className="cyber-text hover:cyber-primary transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:cyber-primary after:transition-all hover:after:w-full cursor-pointer font-mono"
             >
-              CONTACT
+              PAST EVENTS
             </a>
           </div>
 
@@ -170,7 +171,7 @@ const Navbar = () => {
             <a href="#projects" onClick={(e) => { e.preventDefault(); handleSectionClick('#projects'); setIsOpen(false); }} className="block px-3 py-2 cyber-text hover:cyber-primary cursor-pointer transition-colors font-mono">PROJECTS</a>
             <Link to="/team" className="block px-3 py-2 cyber-text hover:cyber-primary transition-colors font-mono">TEAM</Link>
             <Link to="/admin" className="block px-3 py-2 cyber-text hover:cyber-primary transition-colors font-mono">ADMIN</Link>
-            <a href="#past-events" onClick={(e) => { e.preventDefault(); handleSectionClick('#past-events'); setIsOpen(false); }} className="block px-3 py-2 cyber-text hover:cyber-primary cursor-pointer transition-colors font-mono">CONTACT</a>
+            <a href="#past-events" onClick={(e) => { e.preventDefault(); handleSectionClick('#past-events'); setIsOpen(false); }} className="block px-3 py-2 cyber-text hover:cyber-primary cursor-pointer transition-colors font-mono">PAST EVENTS</a>
           </div>
         </div>
       )}

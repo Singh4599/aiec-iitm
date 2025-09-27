@@ -48,7 +48,7 @@ const Admin = () => {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen relative overflow-hidden flex items-center justify-center px-4 pt-20">
+      <div className="min-h-screen relative flex items-center justify-center px-4 pt-20">
 
         <Card className="glass-card max-w-md w-full transform hover:scale-105 transition-all duration-500 premium-card">
           <CardHeader className="text-center">
@@ -65,14 +65,23 @@ const Admin = () => {
           <CardContent className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="password" className="text-slate-300 font-medium">Password</Label>
-              <Input
+              <input
                 id="password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
-                className="glass-card border-cyan-500/30 focus:border-cyan-400 text-white placeholder-slate-400"
+                className="w-full px-4 py-3 bg-slate-800/50 border border-cyan-500/30 focus:border-cyan-400 text-white placeholder-slate-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
                 placeholder="Enter admin password"
+                style={{ 
+                  backgroundColor: 'rgba(30, 41, 59, 0.5)', 
+                  border: '1px solid rgba(6, 182, 212, 0.3)',
+                  color: 'white',
+                  display: 'block',
+                  width: '100%',
+                  zIndex: 10,
+                  position: 'relative'
+                }}
               />
             </div>
             <Button 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Hero from "@/components/Hero";
+import ElectricBorder from "@/components/ElectricBorder";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -109,63 +110,73 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-slide-in-left">
               <div className="grid grid-cols-2 gap-6">
-                <div className="cyber-card rounded-2xl p-6 hover:cyber-glow transition-all duration-300">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-green-500 rounded-xl flex items-center justify-center cyber-glow">
-                    <Code className="w-6 h-6 text-black font-bold" />
+                <ElectricBorder color="#00ff88" speed={1.5} chaos={0.8} thickness={2} style={{ borderRadius: 16 }}>
+                  <div className="cyber-card rounded-2xl p-6 hover:cyber-glow transition-all duration-300">
+                    <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-green-500 rounded-xl flex items-center justify-center cyber-glow">
+                      <Code className="w-6 h-6 text-black font-bold" />
+                    </div>
+                    <h3 className="text-sm font-bold cyber-primary mb-2 text-center tracking-wider font-mono">DEVELOPMENT</h3>
                   </div>
-                  <h3 className="text-sm font-bold cyber-primary mb-2 text-center tracking-wider font-mono">DEVELOPMENT</h3>
-                </div>
+                </ElectricBorder>
                 
-                <div className="cyber-card rounded-2xl p-6 hover:cyber-glow transition-all duration-300">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center cyber-glow">
-                    <Brain className="w-6 h-6 text-white font-bold" />
+                <ElectricBorder color="#ff0088" speed={1.2} chaos={0.6} thickness={2} style={{ borderRadius: 16 }}>
+                  <div className="cyber-card rounded-2xl p-6 hover:cyber-glow transition-all duration-300">
+                    <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center cyber-glow">
+                      <Brain className="w-6 h-6 text-white font-bold" />
+                    </div>
+                    <h3 className="text-sm font-bold cyber-primary mb-2 text-center tracking-wider font-mono">AI/ML</h3>
                   </div>
-                  <h3 className="text-sm font-bold cyber-primary mb-2 text-center tracking-wider font-mono">AI/ML</h3>
-                </div>
+                </ElectricBorder>
                 
-                <div className="cyber-card rounded-2xl p-6 hover:cyber-glow transition-all duration-300">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-green-500 to-cyan-500 rounded-xl flex items-center justify-center cyber-glow">
-                    <Lightbulb className="w-6 h-6 text-black font-bold" />
+                <ElectricBorder color="#00ff88" speed={1.8} chaos={1.0} thickness={2} style={{ borderRadius: 16 }}>
+                  <div className="cyber-card rounded-2xl p-6 hover:cyber-glow transition-all duration-300">
+                    <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-green-500 to-cyan-500 rounded-xl flex items-center justify-center cyber-glow">
+                      <Lightbulb className="w-6 h-6 text-black font-bold" />
+                    </div>
+                    <h3 className="text-sm font-bold cyber-primary mb-2 text-center tracking-wider font-mono">INNOVATION</h3>
                   </div>
-                  <h3 className="text-sm font-bold cyber-primary mb-2 text-center tracking-wider font-mono">INNOVATION</h3>
-                </div>
+                </ElectricBorder>
                 
-                <div className="cyber-card rounded-2xl p-6 hover:cyber-glow transition-all duration-300">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center cyber-glow">
-                    <Users className="w-6 h-6 text-white font-bold" />
+                <ElectricBorder color="#ff6600" speed={1.3} chaos={0.7} thickness={2} style={{ borderRadius: 16 }}>
+                  <div className="cyber-card rounded-2xl p-6 hover:cyber-glow transition-all duration-300">
+                    <div className="w-12 h-12 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center cyber-glow">
+                      <Users className="w-6 h-6 text-white font-bold" />
+                    </div>
+                    <h3 className="text-sm font-bold cyber-primary mb-2 text-center tracking-wider font-mono">COMMUNITY</h3>
                   </div>
-                  <h3 className="text-sm font-bold cyber-primary mb-2 text-center tracking-wider font-mono">COMMUNITY</h3>
-                </div>
+                </ElectricBorder>
               </div>
             </div>
 
-            <div className="cyber-card rounded-2xl p-8 animate-slide-in-right cyber-glow">
-              <div className="space-y-6">
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 cyber-primary rounded-full cyber-glow"></div>
-                    <h3 className="text-lg font-bold cyber-text font-mono">BEYOND CAMPUS VISITS</h3>
+            <ElectricBorder color="#00ff88" speed={1.0} chaos={0.5} thickness={3} style={{ borderRadius: 16 }}>
+              <div className="cyber-card rounded-2xl p-8 animate-slide-in-right cyber-glow">
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 cyber-primary rounded-full cyber-glow"></div>
+                      <h3 className="text-lg font-bold cyber-text font-mono">BEYOND CAMPUS VISITS</h3>
+                    </div>
+                    <p className="cyber-text-muted text-sm font-mono">Exploring diverse opportunities outside the classroom.</p>
                   </div>
-                  <p className="cyber-text-muted text-sm font-mono">Exploring diverse opportunities outside the classroom.</p>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 cyber-secondary rounded-full cyber-glow"></div>
-                    <h3 className="text-lg font-bold cyber-text font-mono">EVENT SPHERE</h3>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 cyber-secondary rounded-full cyber-glow"></div>
+                      <h3 className="text-lg font-bold cyber-text font-mono">EVENT SPHERE</h3>
+                    </div>
+                    <p className="cyber-text-muted text-sm font-mono">A vibrant space for fests, competitions, and collaborations.</p>
                   </div>
-                  <p className="cyber-text-muted text-sm font-mono">A vibrant space for fests, competitions, and collaborations.</p>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 cyber-accent rounded-full cyber-glow"></div>
-                    <h3 className="text-lg font-bold cyber-text font-mono">INNOVATIVE WORKSHOPS</h3>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 cyber-accent rounded-full cyber-glow"></div>
+                      <h3 className="text-lg font-bold cyber-text font-mono">INNOVATIVE WORKSHOPS</h3>
+                    </div>
+                    <p className="cyber-text-muted text-sm font-mono">Hands-on learning with the latest AI & tech tools.</p>
                   </div>
-                  <p className="cyber-text-muted text-sm font-mono">Hands-on learning with the latest AI & tech tools.</p>
                 </div>
               </div>
-            </div>
+            </ElectricBorder>
           </div>
         </div>
       </section>
@@ -184,91 +195,97 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {/* AIEC Orientation */}
-            <div className="cyber-card rounded-2xl p-6 cyber-glow">
-              <div className="flex items-center justify-between mb-4">
-                <span className="cyber-accent bg-cyber-accent/20 text-cyber-accent px-3 py-1 rounded-full text-xs font-semibold font-mono">ORIENTATION</span>
-                <span className="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold font-mono">CLOSED</span>
+            <ElectricBorder color="#ff0088" speed={1.2} chaos={0.6} thickness={2} style={{ borderRadius: 16 }}>
+              <div className="cyber-card rounded-2xl p-6 cyber-glow">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="cyber-accent bg-cyber-accent/20 text-cyber-accent px-3 py-1 rounded-full text-xs font-semibold font-mono">ORIENTATION</span>
+                  <span className="bg-red-600 text-white px-3 py-1 rounded-full text-xs font-semibold font-mono">CLOSED</span>
+                </div>
+                <h3 className="text-xl font-bold cyber-text mb-3 font-mono">AIEC ORIENTATION</h3>
+                <p className="cyber-text-muted text-sm mb-4 font-mono">
+                  Kickstart your AIEC journey—explore our vision, departments, and opportunities.
+                </p>
+                <div className="space-y-2 mb-6">
+                  <div className="flex items-center cyber-text-muted text-sm font-mono">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    August 26, 2025
+                  </div>
+                  <div className="flex items-center cyber-text-muted text-sm font-mono">
+                    <MapPin className="w-4 h-4 mr-2" />
+                    IITM Campus (Auditorium)
+                  </div>
+                  <div className="flex items-center cyber-text-muted text-sm font-mono">
+                    <Users className="w-4 h-4 mr-2" />
+                    Open to all freshers participants
+                  </div>
+                </div>
+                <Button className="w-full cyber-button rounded-xl font-mono font-bold">
+                  REGISTER NOW
+                </Button>
               </div>
-              <h3 className="text-xl font-bold cyber-text mb-3 font-mono">AIEC ORIENTATION</h3>
-              <p className="cyber-text-muted text-sm mb-4 font-mono">
-                Kickstart your AIEC journey—explore our vision, departments, and opportunities.
-              </p>
-              <div className="space-y-2 mb-6">
-                <div className="flex items-center cyber-text-muted text-sm font-mono">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  August 26, 2025
-                </div>
-                <div className="flex items-center cyber-text-muted text-sm font-mono">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  IITM Campus (Auditorium)
-                </div>
-                <div className="flex items-center cyber-text-muted text-sm font-mono">
-                  <Users className="w-4 h-4 mr-2" />
-                  Open to all freshers participants
-                </div>
-              </div>
-              <Button className="w-full cyber-button rounded-xl font-mono font-bold">
-                REGISTER NOW
-              </Button>
-            </div>
+            </ElectricBorder>
 
             {/* AIEC Registration */}
-            <div className="cyber-card rounded-2xl p-6 cyber-glow">
-              <div className="flex items-center justify-between mb-4">
-                <span className="cyber-secondary bg-cyber-secondary/20 text-cyber-secondary px-3 py-1 rounded-full text-xs font-semibold font-mono">MEMBERSHIP</span>
-                <span className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold font-mono">REGISTER NOW</span>
+            <ElectricBorder color="#0088ff" speed={1.4} chaos={0.8} thickness={2} style={{ borderRadius: 16 }}>
+              <div className="cyber-card rounded-2xl p-6 cyber-glow">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="cyber-secondary bg-cyber-secondary/20 text-cyber-secondary px-3 py-1 rounded-full text-xs font-semibold font-mono">MEMBERSHIP</span>
+                  <span className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold font-mono">REGISTER NOW</span>
+                </div>
+                <h3 className="text-xl font-bold cyber-text mb-3 font-mono">AIEC REGISTRATION</h3>
+                <p className="cyber-text-muted text-sm mb-4 font-mono">
+                  Join the Artificial Intelligence Experience Centre and become part of a vibrant AI-driven community.
+                </p>
+                <div className="space-y-2 mb-6">
+                  <div className="flex items-center cyber-text-muted text-sm font-mono">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    September 8-9, 2025
+                  </div>
+                  <div className="flex items-center cyber-text-muted text-sm font-mono">
+                    <MapPin className="w-4 h-4 mr-2" />
+                    IITM Campus
+                  </div>
+                  <div className="flex items-center cyber-text-muted text-sm font-mono">
+                    <Users className="w-4 h-4 mr-2" />
+                    Limited Seats participants
+                  </div>
+                </div>
+                <Button className="w-full cyber-button rounded-xl font-mono font-bold">
+                  REGISTER NOW
+                </Button>
               </div>
-              <h3 className="text-xl font-bold cyber-text mb-3 font-mono">AIEC REGISTRATION</h3>
-              <p className="cyber-text-muted text-sm mb-4 font-mono">
-                Join the Artificial Intelligence Experience Centre and become part of a vibrant AI-driven community.
-              </p>
-              <div className="space-y-2 mb-6">
-                <div className="flex items-center cyber-text-muted text-sm font-mono">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  September 8-9, 2025
-                </div>
-                <div className="flex items-center cyber-text-muted text-sm font-mono">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  IITM Campus
-                </div>
-                <div className="flex items-center cyber-text-muted text-sm font-mono">
-                  <Users className="w-4 h-4 mr-2" />
-                  Limited Seats participants
-                </div>
-              </div>
-              <Button className="w-full cyber-button rounded-xl font-mono font-bold">
-                REGISTER NOW
-              </Button>
-            </div>
+            </ElectricBorder>
 
             {/* Techno Sapiens 2025 */}
-            <div className="cyber-card rounded-2xl p-6 cyber-glow">
-              <div className="flex items-center justify-between mb-4">
-                <span className="cyber-accent bg-cyber-accent/20 text-cyber-accent px-3 py-1 rounded-full text-xs font-semibold font-mono">TECH FEST</span>
-                <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-xs font-semibold font-mono">COMING SOON</span>
+            <ElectricBorder color="#ff6600" speed={1.6} chaos={1.2} thickness={2} style={{ borderRadius: 16 }}>
+              <div className="cyber-card rounded-2xl p-6 cyber-glow">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="cyber-accent bg-cyber-accent/20 text-cyber-accent px-3 py-1 rounded-full text-xs font-semibold font-mono">TECH FEST</span>
+                  <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-xs font-semibold font-mono">COMING SOON</span>
+                </div>
+                <h3 className="text-xl font-bold cyber-text mb-3 font-mono">TECHNO SAPIENS 2025</h3>
+                <p className="cyber-text-muted text-sm mb-4 font-mono">
+                  The flagship annual tech fest of AIEC—packed with hackathons, workshops, competitions & innovations.
+                </p>
+                <div className="space-y-2 mb-6">
+                  <div className="flex items-center cyber-text-muted text-sm font-mono">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Coming Soon - 2025
+                  </div>
+                  <div className="flex items-center cyber-text-muted text-sm font-mono">
+                    <MapPin className="w-4 h-4 mr-2" />
+                    IITM Campus
+                  </div>
+                  <div className="flex items-center cyber-text-muted text-sm font-mono">
+                    <Users className="w-4 h-4 mr-2" />
+                    500+ participants expected participants
+                  </div>
+                </div>
+                <Button className="w-full cyber-button rounded-xl font-mono font-bold">
+                  REGISTER NOW
+                </Button>
               </div>
-              <h3 className="text-xl font-bold cyber-text mb-3 font-mono">TECHNO SAPIENS 2025</h3>
-              <p className="cyber-text-muted text-sm mb-4 font-mono">
-                The flagship annual tech fest of AIEC—packed with hackathons, workshops, competitions & innovations.
-              </p>
-              <div className="space-y-2 mb-6">
-                <div className="flex items-center cyber-text-muted text-sm font-mono">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Coming Soon - 2025
-                </div>
-                <div className="flex items-center cyber-text-muted text-sm font-mono">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  IITM Campus
-                </div>
-                <div className="flex items-center cyber-text-muted text-sm font-mono">
-                  <Users className="w-4 h-4 mr-2" />
-                  500+ participants expected participants
-                </div>
-              </div>
-              <Button className="w-full cyber-button rounded-xl font-mono font-bold">
-                REGISTER NOW
-              </Button>
-            </div>
+            </ElectricBorder>
           </div>
 
           <div className="text-center">
@@ -296,58 +313,64 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {/* AI-Powered Smart Campus */}
-            <div className="cyber-card rounded-2xl p-8 cyber-glow">
-              <div className="text-center mb-6">
-                <Code className="w-16 h-16 mx-auto cyber-primary mb-4" />
-                <span className="cyber-accent bg-cyber-accent/20 text-cyber-accent px-3 py-1 rounded-full text-xs font-semibold font-mono">AI/ML</span>
+            <ElectricBorder color="#00ff88" speed={1.3} chaos={0.7} thickness={2} style={{ borderRadius: 16 }}>
+              <div className="cyber-card rounded-2xl p-8 cyber-glow">
+                <div className="text-center mb-6">
+                  <Code className="w-16 h-16 mx-auto cyber-primary mb-4" />
+                  <span className="cyber-accent bg-cyber-accent/20 text-cyber-accent px-3 py-1 rounded-full text-xs font-semibold font-mono">AI/ML</span>
+                </div>
+                <h3 className="text-xl font-bold cyber-text mb-3 font-mono">AI-POWERED SMART CAMPUS</h3>
+                <p className="cyber-text-muted text-sm mb-6 font-mono">
+                  An intelligent campus management system using computer vision and IoT sensors to optimize resource utilization and enhance security.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">Python</span>
+                  <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">TensorFlow</span>
+                  <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">React</span>
+                  <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">Node.js</span>
+                </div>
               </div>
-              <h3 className="text-xl font-bold cyber-text mb-3 font-mono">AI-POWERED SMART CAMPUS</h3>
-              <p className="cyber-text-muted text-sm mb-6 font-mono">
-                An intelligent campus management system using computer vision and IoT sensors to optimize resource utilization and enhance security.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">Python</span>
-                <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">TensorFlow</span>
-                <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">React</span>
-                <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">Node.js</span>
-              </div>
-            </div>
+            </ElectricBorder>
 
             {/* Blockchain Voting System */}
-            <div className="cyber-card rounded-2xl p-8 cyber-glow">
-              <div className="text-center mb-6">
-                <Database className="w-16 h-16 mx-auto cyber-secondary mb-4" />
-                <span className="cyber-secondary bg-cyber-secondary/20 text-cyber-secondary px-3 py-1 rounded-full text-xs font-semibold font-mono">BLOCKCHAIN</span>
+            <ElectricBorder color="#0088ff" speed={1.5} chaos={0.9} thickness={2} style={{ borderRadius: 16 }}>
+              <div className="cyber-card rounded-2xl p-8 cyber-glow">
+                <div className="text-center mb-6">
+                  <Database className="w-16 h-16 mx-auto cyber-secondary mb-4" />
+                  <span className="cyber-secondary bg-cyber-secondary/20 text-cyber-secondary px-3 py-1 rounded-full text-xs font-semibold font-mono">BLOCKCHAIN</span>
+                </div>
+                <h3 className="text-xl font-bold cyber-text mb-3 font-mono">BLOCKCHAIN VOTING SYSTEM</h3>
+                <p className="cyber-text-muted text-sm mb-6 font-mono">
+                  A decentralized voting platform ensuring transparency and immutability in electoral processes using blockchain technology.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">Solidity</span>
+                  <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">Web3.js</span>
+                  <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">React</span>
+                  <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">Node.js</span>
+                </div>
               </div>
-              <h3 className="text-xl font-bold cyber-text mb-3 font-mono">BLOCKCHAIN VOTING SYSTEM</h3>
-              <p className="cyber-text-muted text-sm mb-6 font-mono">
-                A decentralized voting platform ensuring transparency and immutability in electoral processes using blockchain technology.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">Solidity</span>
-                <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">Web3.js</span>
-                <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">React</span>
-                <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">Node.js</span>
-              </div>
-            </div>
+            </ElectricBorder>
 
             {/* Real-time Energy Monitor */}
-            <div className="cyber-card rounded-2xl p-8 cyber-glow">
-              <div className="text-center mb-6">
-                <Zap className="w-16 h-16 mx-auto cyber-primary mb-4" />
-                <span className="cyber-primary bg-cyber-primary/20 text-cyber-primary px-3 py-1 rounded-full text-xs font-semibold font-mono">IoT</span>
+            <ElectricBorder color="#00ff88" speed={1.7} chaos={1.1} thickness={2} style={{ borderRadius: 16 }}>
+              <div className="cyber-card rounded-2xl p-8 cyber-glow">
+                <div className="text-center mb-6">
+                  <Zap className="w-16 h-16 mx-auto cyber-primary mb-4" />
+                  <span className="cyber-primary bg-cyber-primary/20 text-cyber-primary px-3 py-1 rounded-full text-xs font-semibold font-mono">IoT</span>
+                </div>
+                <h3 className="text-xl font-bold cyber-text mb-3 font-mono">REAL-TIME ENERGY MONITOR</h3>
+                <p className="cyber-text-muted text-sm mb-6 font-mono">
+                  IoT-based energy consumption monitoring system with predictive analytics and automated optimization recommendations.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">IoT</span>
+                  <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">Python</span>
+                  <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">React</span>
+                  <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">AWS</span>
+                </div>
               </div>
-              <h3 className="text-xl font-bold cyber-text mb-3 font-mono">REAL-TIME ENERGY MONITOR</h3>
-              <p className="cyber-text-muted text-sm mb-6 font-mono">
-                IoT-based energy consumption monitoring system with predictive analytics and automated optimization recommendations.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">IoT</span>
-                <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">Python</span>
-                <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">React</span>
-                <span className="cyber-border cyber-text px-2 py-1 rounded text-xs font-mono">AWS</span>
-              </div>
-            </div>
+            </ElectricBorder>
           </div>
 
           <div className="text-center">
@@ -393,34 +416,36 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
             </div>
 
             {/* Right Content - Event Card */}
-            <div className="glass-card rounded-2xl p-8 premium-card">
-              <div className="relative">
-                <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl p-6 mb-6">
-                  <div className="text-white">
-                    <h3 className="text-2xl font-bold mb-2">Data Science Bootcamp</h3>
-                    <div className="grid grid-cols-3 gap-4 mt-6">
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-cyan-400">7</div>
-                        <div className="text-sm text-slate-300">WORKSHOPS</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-blue-400">9</div>
-                        <div className="text-sm text-slate-300">SPEAKERS</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-3xl font-bold text-purple-400">22</div>
-                        <div className="text-sm text-slate-300">PROJECTS</div>
+            <ElectricBorder color="#0088ff" speed={1.1} chaos={0.5} thickness={3} style={{ borderRadius: 16 }}>
+              <div className="glass-card rounded-2xl p-8 premium-card">
+                <div className="relative">
+                  <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl p-6 mb-6">
+                    <div className="text-white">
+                      <h3 className="text-2xl font-bold mb-2">Data Science Bootcamp</h3>
+                      <div className="grid grid-cols-3 gap-4 mt-6">
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-cyan-400">7</div>
+                          <div className="text-sm text-slate-300">WORKSHOPS</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-blue-400">9</div>
+                          <div className="text-sm text-slate-300">SPEAKERS</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-3xl font-bold text-purple-400">22</div>
+                          <div className="text-sm text-slate-300">PROJECTS</div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="text-slate-400 text-sm">
-                  <div className="mb-2">October 2023</div>
-                  <div>Experience: 3 days</div>
-                  <div>Mode: Hybrid</div>
+                  <div className="text-slate-400 text-sm">
+                    <div className="mb-2">October 2023</div>
+                    <div>Experience: 3 days</div>
+                    <div>Mode: Hybrid</div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ElectricBorder>
           </div>
         </div>
       </section>
@@ -439,37 +464,45 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
 
           {/* Statistics Grid */}
           <div className="grid md:grid-cols-4 gap-8 mb-16">
-            <div className="cyber-card rounded-2xl p-8 text-center cyber-glow">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-green-500 rounded-xl flex items-center justify-center cyber-glow">
-                <Calendar className="w-8 h-8 text-black font-bold" />
+            <ElectricBorder color="#00ff88" speed={1.2} chaos={0.6} thickness={2} style={{ borderRadius: 16 }}>
+              <div className="cyber-card rounded-2xl p-8 text-center cyber-glow">
+                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-green-500 rounded-xl flex items-center justify-center cyber-glow">
+                  <Calendar className="w-8 h-8 text-black font-bold" />
+                </div>
+                <div className="text-4xl font-bold cyber-primary mb-2 font-mono">50+</div>
+                <div className="cyber-text-muted text-sm font-semibold tracking-wider font-mono">EVENTS HOSTED</div>
               </div>
-              <div className="text-4xl font-bold cyber-primary mb-2 font-mono">50+</div>
-              <div className="cyber-text-muted text-sm font-semibold tracking-wider font-mono">EVENTS HOSTED</div>
-            </div>
+            </ElectricBorder>
 
-            <div className="cyber-card rounded-2xl p-8 text-center cyber-glow">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center cyber-glow">
-                <Code className="w-8 h-8 text-white font-bold" />
+            <ElectricBorder color="#ff0088" speed={1.4} chaos={0.8} thickness={2} style={{ borderRadius: 16 }}>
+              <div className="cyber-card rounded-2xl p-8 text-center cyber-glow">
+                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center cyber-glow">
+                  <Code className="w-8 h-8 text-white font-bold" />
+                </div>
+                <div className="text-4xl font-bold cyber-accent mb-2 font-mono">100+</div>
+                <div className="cyber-text-muted text-sm font-semibold tracking-wider font-mono">PROJECTS COMPLETED</div>
               </div>
-              <div className="text-4xl font-bold cyber-accent mb-2 font-mono">100+</div>
-              <div className="cyber-text-muted text-sm font-semibold tracking-wider font-mono">PROJECTS COMPLETED</div>
-            </div>
+            </ElectricBorder>
 
-            <div className="cyber-card rounded-2xl p-8 text-center cyber-glow">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center cyber-glow">
-                <Users className="w-8 h-8 text-white font-bold" />
+            <ElectricBorder color="#0088ff" speed={1.6} chaos={1.0} thickness={2} style={{ borderRadius: 16 }}>
+              <div className="cyber-card rounded-2xl p-8 text-center cyber-glow">
+                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center cyber-glow">
+                  <Users className="w-8 h-8 text-white font-bold" />
+                </div>
+                <div className="text-4xl font-bold cyber-secondary mb-2 font-mono">150+</div>
+                <div className="cyber-text-muted text-sm font-semibold tracking-wider font-mono">ACTIVE MEMBERS</div>
               </div>
-              <div className="text-4xl font-bold cyber-secondary mb-2 font-mono">150+</div>
-              <div className="cyber-text-muted text-sm font-semibold tracking-wider font-mono">ACTIVE MEMBERS</div>
-            </div>
+            </ElectricBorder>
 
-            <div className="cyber-card rounded-2xl p-8 text-center cyber-glow">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center cyber-glow">
-                <Award className="w-8 h-8 text-white font-bold" />
+            <ElectricBorder color="#00ff88" speed={1.8} chaos={1.2} thickness={2} style={{ borderRadius: 16 }}>
+              <div className="cyber-card rounded-2xl p-8 text-center cyber-glow">
+                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center cyber-glow">
+                  <Award className="w-8 h-8 text-white font-bold" />
+                </div>
+                <div className="text-4xl font-bold cyber-primary mb-2 font-mono">100+</div>
+                <div className="cyber-text-muted text-sm font-semibold tracking-wider font-mono">WINNERS</div>
               </div>
-              <div className="text-4xl font-bold cyber-primary mb-2 font-mono">100+</div>
-              <div className="cyber-text-muted text-sm font-semibold tracking-wider font-mono">WINNERS</div>
-            </div>
+            </ElectricBorder>
           </div>
 
           {/* Recent Achievements */}
@@ -477,77 +510,89 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
             <h3 className="text-3xl font-bold cyber-text mb-8 font-mono">RECENT ACHIEVEMENTS</h3>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              <div className="cyber-card rounded-2xl p-6 cyber-glow">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0 cyber-glow">
-                    <Star className="w-6 h-6 text-white font-bold" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-lg font-bold cyber-text mb-1 font-mono">TECHNO SAPIENS 2024</h4>
-                    <p className="cyber-text-muted text-sm font-mono">Organized our flagship fest with 500+ participants across events</p>
+              <ElectricBorder color="#ff6600" speed={1.3} chaos={0.7} thickness={2} style={{ borderRadius: 16 }}>
+                <div className="cyber-card rounded-2xl p-6 cyber-glow">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0 cyber-glow">
+                      <Star className="w-6 h-6 text-white font-bold" />
+                    </div>
+                    <div className="text-left">
+                      <h4 className="text-lg font-bold cyber-text mb-1 font-mono">TECHNO SAPIENS 2024</h4>
+                      <p className="cyber-text-muted text-sm font-mono">Organized our flagship fest with 500+ participants across events</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ElectricBorder>
 
-              <div className="cyber-card rounded-2xl p-6 cyber-glow">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0 cyber-glow">
-                    <Lightbulb className="w-6 h-6 text-white font-bold" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-lg font-bold cyber-text mb-1 font-mono">INNOVATIVE SOLUTIONS</h4>
-                    <p className="cyber-text-muted text-sm font-mono">Developed real-world AI projects in healthcare, finance, and automation</p>
+              <ElectricBorder color="#ff0088" speed={1.5} chaos={0.9} thickness={2} style={{ borderRadius: 16 }}>
+                <div className="cyber-card rounded-2xl p-6 cyber-glow">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0 cyber-glow">
+                      <Lightbulb className="w-6 h-6 text-white font-bold" />
+                    </div>
+                    <div className="text-left">
+                      <h4 className="text-lg font-bold cyber-text mb-1 font-mono">INNOVATIVE SOLUTIONS</h4>
+                      <p className="cyber-text-muted text-sm font-mono">Developed real-world AI projects in healthcare, finance, and automation</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ElectricBorder>
 
-              <div className="cyber-card rounded-2xl p-6 cyber-glow">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0 cyber-glow">
-                    <Users className="w-6 h-6 text-white font-bold" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-lg font-bold cyber-text mb-1 font-mono">COMMUNITY IMPACT</h4>
-                    <p className="cyber-text-muted text-sm font-mono">Conducted 20+ workshops and outreach programs to spread AI awareness beyond campus</p>
+              <ElectricBorder color="#ff0088" speed={1.7} chaos={1.1} thickness={2} style={{ borderRadius: 16 }}>
+                <div className="cyber-card rounded-2xl p-6 cyber-glow">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0 cyber-glow">
+                      <Users className="w-6 h-6 text-white font-bold" />
+                    </div>
+                    <div className="text-left">
+                      <h4 className="text-lg font-bold cyber-text mb-1 font-mono">COMMUNITY IMPACT</h4>
+                      <p className="cyber-text-muted text-sm font-mono">Conducted 20+ workshops and outreach programs to spread AI awareness beyond campus</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ElectricBorder>
 
-              <div className="cyber-card rounded-2xl p-6 cyber-glow">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0 cyber-glow">
-                    <Award className="w-6 h-6 text-white font-bold" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-lg font-bold cyber-text mb-1 font-mono">STUDENT SUCCESS</h4>
-                    <p className="cyber-text-muted text-sm font-mono">AIEC members secured internships and placements at top tech companies</p>
+              <ElectricBorder color="#00ff88" speed={1.9} chaos={1.3} thickness={2} style={{ borderRadius: 16 }}>
+                <div className="cyber-card rounded-2xl p-6 cyber-glow">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0 cyber-glow">
+                      <Award className="w-6 h-6 text-white font-bold" />
+                    </div>
+                    <div className="text-left">
+                      <h4 className="text-lg font-bold cyber-text mb-1 font-mono">STUDENT SUCCESS</h4>
+                      <p className="cyber-text-muted text-sm font-mono">AIEC members secured internships and placements at top tech companies</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ElectricBorder>
 
-              <div className="cyber-card rounded-2xl p-6 cyber-glow">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center flex-shrink-0 cyber-glow">
-                    <Briefcase className="w-6 h-6 text-white font-bold" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-lg font-bold cyber-text mb-1 font-mono">INDUSTRY COLLABORATIONS</h4>
-                    <p className="cyber-text-muted text-sm font-mono">Partnered with leading AI startups for hands-on student projects</p>
+              <ElectricBorder color="#00ff88" speed={2.1} chaos={1.5} thickness={2} style={{ borderRadius: 16 }}>
+                <div className="cyber-card rounded-2xl p-6 cyber-glow">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl flex items-center justify-center flex-shrink-0 cyber-glow">
+                      <Briefcase className="w-6 h-6 text-white font-bold" />
+                    </div>
+                    <div className="text-left">
+                      <h4 className="text-lg font-bold cyber-text mb-1 font-mono">INDUSTRY COLLABORATIONS</h4>
+                      <p className="cyber-text-muted text-sm font-mono">Partnered with leading AI startups for hands-on student projects</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ElectricBorder>
 
-              <div className="cyber-card rounded-2xl p-6 cyber-glow">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0 cyber-glow">
-                    <Globe className="w-6 h-6 text-white font-bold" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="text-lg font-bold cyber-text mb-1 font-mono">RESEARCH PUBLICATIONS</h4>
-                    <p className="cyber-text-muted text-sm font-mono">10+ papers published in journals/conferences</p>
+              <ElectricBorder color="#0088ff" speed={2.3} chaos={1.7} thickness={2} style={{ borderRadius: 16 }}>
+                <div className="cyber-card rounded-2xl p-6 cyber-glow">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center flex-shrink-0 cyber-glow">
+                      <Globe className="w-6 h-6 text-white font-bold" />
+                    </div>
+                    <div className="text-left">
+                      <h4 className="text-lg font-bold cyber-text mb-1 font-mono">RESEARCH PUBLICATIONS</h4>
+                      <p className="cyber-text-muted text-sm font-mono">10+ papers published in journals/conferences</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ElectricBorder>
             </div>
 
             <Button 
@@ -577,7 +622,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
             </div>
 
             {/* Right Content - Glass Morphism Card */}
-            <div className="relative">
+            <ElectricBorder color="#7df9ff" speed={1.0} chaos={0.4} thickness={3} style={{ borderRadius: 16 }}>
               <div className="bg-gradient-to-br from-cyan-600/20 to-purple-600/20 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-8 shadow-2xl">
                 <div className="text-white">
                   <h3 className="text-2xl font-bold mb-4">We're giving AI a way to navigate the physical world</h3>
@@ -586,7 +631,7 @@ const Home = ({ isAppLoaded, showLoadingScreen }) => {
                   </p>
                 </div>
               </div>
-            </div>
+            </ElectricBorder>
           </div>
         </div>
       </section>

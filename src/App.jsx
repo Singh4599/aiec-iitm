@@ -57,7 +57,7 @@ const App = () => {
           <Toaster />
           <SonnerToaster />
         <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-          <div className="min-h-screen relative overflow-hidden transition-all duration-300 ease-in-out">
+          <div className="min-h-screen relative transition-all duration-300 ease-in-out">
             {/* Advanced 3D Cyberpunk Background */}
             <CyberpunkBackground />
             {/* Splash Cursor Effect */}
